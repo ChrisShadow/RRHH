@@ -1,9 +1,25 @@
+from actividades import Actividades
+from divisa import Divisa
+from horario import Horario
+from lista_actividades import ListaActividades
+from lista_horario import ListaHorario
+from lugar_trabajo import LugarTrabajo
+from rela_v_abajo import RelacionVAbajo
+from rela_v_arriba import RelacionVArriba
+from relacion_horiz import RelacionHorizontal
+
+
+
 #region Doc
 
 #Inheritance: Adoption of properties from the parent class into the child class.
 #Polymorphism: Creation of many forms from one form.
 #Abstraction: Displaying the necessary data and hiding unnecessary data.
 #Encapsulation: Securing the info of the class.
+"Classes in Python are created with the keyword class, followed by the name of the class. Class attributes are defined after the class-" 
+"-name, and they are shared by all instances of the class. Individual instance attributes are defined after the class attributes, and-" 
+"-they are unique to each instance. Method definitions are also placed after the class definition. Methods are functions that are-"
+"-associated with a class, and they are used to process or manipulate the data stored in instances of the class."
 
 "classes on Python: https://docs.python.org/3/tutorial/classes.html"
 "https://youtu.be/LwFnF9XoEfM"
@@ -30,6 +46,40 @@
 #endregion
 
 class Cargo():
-    
-    def __init__(self) -> None:
-        pass
+    "static variables: those which are not from other classes"
+    #region class attibutes
+    tipo_funcionario=dict()
+    periodo_pago=dict()
+    #endregion
+
+    "It is called every time an object is created from a class and lets the class initialize the object's attributes and serves no other purpose"
+    "self keyword to make sure that the properties are properly bound to the class. There is no use of class declaration if we do not use the self keyword"
+    #region constructor
+    def __init__(self,name,relacion_v_arriba,relacion_v_abajo,relacion_horizontal,lista_actividad,lista_horario,divisa,indice_tipo_funcionario,pago_funcionario,porcentaje_comision,
+                 indice_periodo_pago):
+        self.name=name
+        self._relacion_v_arriba=relacion_v_arriba
+        self._relacion_v_abajo=relacion_v_abajo
+        self._relacion_horizontal=relacion_horizontal
+        self._lista_actividad=lista_actividad
+        self._lista_horario=lista_horario
+        self._divisa=divisa
+        self.indice_tipo_funcionario=indice_tipo_funcionario
+        self.pago_funcionario=pago_funcionario
+        self.porcentaje_comision=porcentaje_comision
+        self.indice_periodo_pago=indice_periodo_pago
+        
+    #endregion
+
+    #region getter
+
+    #endregion
+
+    #region setter
+
+    #endregion
+
+   #region class methods
+
+
+   #endregion
