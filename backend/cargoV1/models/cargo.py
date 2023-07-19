@@ -1,12 +1,9 @@
-from actividades import Actividades
 from divisa import Divisa
-from horario import Horario
 from lista_actividades import ListaActividades
 from lista_horario import ListaHorario
-from lugar_trabajo import LugarTrabajo
 from rela_v_abajo import RelacionVAbajo
 from rela_v_arriba import RelacionVArriba
-from relacion_horiz import RelacionHorizontal
+from relacion_Horiz import RelacionHorizontal
 
 
 
