@@ -48,12 +48,14 @@ from relacion_horiz import RelacionHorizontal
 class Cargo():
     "static variables: those which are not from other classes"
     #region class attibutes
-    tipo_funcionario=dict()
-    periodo_pago=dict()
+    "Dictionary type variable constant "
+    tipo_funcionario={1:'Asalariado',2:'Tercerizado'}
+    periodo_pago={1:'Jornal',2:'Semanal',3:'Quincenal',4:'Mensual'}
     #endregion
 
     "It is called every time an object is created from a class and lets the class initialize the object's attributes and serves no other purpose"
     "self keyword to make sure that the properties are properly bound to the class. There is no use of class declaration if we do not use the self keyword"
+    "Those which have _X, it is due to non-public member: from another class"
     #region constructor
     def __init__(self,name,relacion_v_arriba,relacion_v_abajo,relacion_horizontal,lista_actividad,lista_horario,divisa,indice_tipo_funcionario,pago_funcionario,porcentaje_comision,
                  indice_periodo_pago):
@@ -68,18 +70,67 @@ class Cargo():
         self.pago_funcionario=pago_funcionario
         self.porcentaje_comision=porcentaje_comision
         self.indice_periodo_pago=indice_periodo_pago
-        
     #endregion
 
+    "Retrieves the instance attributes."
     #region getter
+    def get_name(self):
+        return self.name
+    
+    "Here, the method that displays the attributes as a whole in RelacionVArriba is accessed"
+    def get_relacion_v_arriba(self):
+        return RelacionVArriba.show_data(self._relacion_v_arriba)
+    
+    def get_relacion_v_abajo(self):
+        return RelacionVAbajo.show_data(self._relacion_v_abajo) 
+    
+    def get_relacion_horizontal(self):
+        return RelacionHorizontal.show_data(self._relacion_horizontal) 
+    
+    def get_lista_actividad(self):
+        return ListaActividades.show_data(self._lista_actividad)
+    
+    def get_lista_horario(self):
+        return ListaHorario.show_data(self._lista_horario)
+    
+    def get_divisa(self):
+        return Divisa.show_data(self._divisa)
+    
+    def get_pago_funcionario(self):
+        return self.pago_funcionario
+    
+    def get_porcentaje_comision(self):
+        return self.porcentaje_comision
 
+    "Additional method to get the indexes and then access the values in the tipo_funcionario dictionary"
+    def get_indice_tipo_funcionario(self):
+        return self.indice_tipo_funcionario
+
+    "Here if the indices change, the values you obtain using get_indice_tipo_funcionario() will also change automatically."
+    def get_tipo_funcionario(self):
+        return Cargo.tipo_funcionario[self.get_indice_tipo_funcionario()]
+    
+    def get_indice_periodo_pago(self):
+        return self.indice_periodo_pago
+
+    def get_periodo_pago(self):
+        return Cargo.periodo_pago[self.get_indice_periodo_pago()]
+    
     #endregion
 
+    "Enables to change of the values of those attributes"
     #region setter
 
     #endregion
 
    #region class methods
+   #"Here, the dictionary tipo_funcionario is obtained directly using the class name, Cargo."
+    @classmethod
+    def get_tipo_funcionario_dict(cls):
+        return cls.tipo_funcionario
 
+    @classmethod
+    def get_periodo_pago_dict(cls):
+        return cls.periodo_pago
 
    #endregion
