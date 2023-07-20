@@ -117,7 +117,55 @@ class Cargo():
 
     "Enables to change of the values of those attributes"
     #region setter
+    def set_name(self, new_name):
+        self.name=new_name
+    
+    def set_relacion_v_arriba(self,new_relacion_v_arriba):
+        self._relacion_v_arriba=new_relacion_v_arriba
 
+    def set_relacion_v_abajo(self,new_relacion_v_abajo):
+        self._relacion_v_abajo=new_relacion_v_abajo
+
+    def set_relacion_horizontal(self,new_relacion_horizontal):
+        self._relacion_horizontal=new_relacion_horizontal
+
+    def set_lista_actividad(self,new_lista_actividad):
+        self._lista_actividad=new_lista_actividad
+
+    def set_lista_horario(self,new_lista_horario):
+        self._lista_horario=new_lista_horario
+
+
+    def set_divisa(self,new_divisa):
+        self._divisa=new_divisa
+    
+    def set_pago_funcionario(self, new_pago_funcionario):
+        self.pago_funcionario=new_pago_funcionario
+    
+    def set_porcentaje_comision(self,new_porcentaje_comision):
+        self.porcentaje_comision=new_porcentaje_comision
+    
+    def set_indice_tipo_funcionario(self,new_indice_tipo_funcionario):
+        self.indice_tipo_funcionario=new_indice_tipo_funcionario
+
+    "It is not required because changes won't be necessary in the dict"
+    #def set_tipo_funcionario(self,new_tipo_funcionario):
+    #    for key, value in self.tipo_funcionario.items():
+    #        if value==new_tipo_funcionario:
+    #            self.indice_tipo_funcionario=key
+    #            break
+    
+    def set_indice_periodo_pago(self,new_indice_periodo_pago):
+        self.indice_periodo_pago=new_indice_periodo_pago
+
+    #def set_indice_periodo_pago(self,new_indice_periodo_pago):
+    #    for key, value in self.indice_periodo_pago.items():
+    #        if value==new_indice_periodo_pago:
+    #            self.indice_periodo_pago=key
+    #            break
+
+    
+    
     #endregion
 
    #region class methods
