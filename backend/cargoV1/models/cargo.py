@@ -5,6 +5,8 @@ from rela_v_abajo import RelacionVAbajo
 from rela_v_arriba import RelacionVArriba
 from relacion_Horiz import RelacionHorizontal
 
+import json
+
 
 
 #region Doc
@@ -197,4 +199,31 @@ class Cargo():
     def get_periodo_pago_dict(cls):
         return cls.periodo_pago
 
+    "Display the data as a whole transformed as a json object"
+    def show_data(self):
+        
+        "In order to determine: Tipo de funcionario y remuneración"
+        tipo_funcionario=(f"Tipo funcionario: {self.get_tipo_funcionario()} " + 
+                          f"Salario: {self.get_pago_funcionario()}" if self.indice_tipo_funcionario==1 
+                          else f"Tipo funcionario: {self.get_tipo_funcionario()} " + 
+                          f"Viático: {self.get_pago_funcionario()}"
+                          )
+        
+        "The response will be a tuple containing the dictionary as the first element and the JSON string as the second element."
+        response= {
+            "Nombre del cargo: ": self.get_name(),
+            "Relación vertical arriba: ": self.get_relacion_v_arriba(), 
+            "Relación vertical abajo: ": self.get_relacion_v_abajo(),
+            "Relación horizontal: ": self.get_relacion_horizontal(),
+            "Lista de actividades: ":self.get_lista_actividad(),
+            "Lista de horario: ": self.get_lista_horario(),
+            "Tipo de funcionario y remuneración: ":tipo_funcionario,
+            "Porcentaje Comisión: ": self.get_porcentaje_comision(),
+            "Moneda: ": self.get_divisa(),
+            "Período Pago: ": self.get_periodo_pago()
+            }
+
+        "dumps() of the json module takes the dictionary as input and returns a text string in JSON format"
+        json_response=json.dumps(response)
+        return json_response
    #endregion
