@@ -9,15 +9,45 @@ from relacion_Horiz import RelacionHorizontal
 
 #region Doc
 
-#Inheritance: Adoption of properties from the parent class into the child class.
-#Polymorphism: Creation of many forms from one form.
-#Abstraction: Displaying the necessary data and hiding unnecessary data.
-#Encapsulation: Securing the info of the class.
-"Classes in Python are created with the keyword class, followed by the name of the class. Class attributes are defined after the class-" 
+#Some definitions
+"Class->a template."
+"Attribute->A variable within a class."
+"Method->A function within a class."
+"Object->A particular instance of a class."
+"Constructor->Code that runs when an object is created."
+"Inheritance->The ability to extend a class to make a new class."
+
+#Fundamental elements
+"Inheritance: Adoption of properties from the parent class into the child class."
+"Polymorphism: Creation of many forms from one form."
+"Abstraction: Displaying the necessary data and hiding unnecessary data."
+"Encapsulation: Securing the info of the class."
+
+#Classes in Python 
+"They are created with the keyword class, followed by the name of the class. Class attributes are defined after the class-" 
 "-name, and they are shared by all instances of the class. Individual instance attributes are defined after the class attributes, and-" 
 "-they are unique to each instance. Method definitions are also placed after the class definition. Methods are functions that are-"
 "-associated with a class, and they are used to process or manipulate the data stored in instances of the class."
+"In Python we have class type attributes and instance type attributes:" 
+"That is, those not defined in the constructor(__init__) and those that are defined in it."
+"The same ocurrs with methods: class level ones and instance level ones. Key word are self for the-" 
+"-instance level and cls for class level."
+"Another kind of method is the static one. Only has access to the parameters that we pass into it individually and then-"
+"-can be used with either the class itself or the instance object."
+"There are not private and protected, just public and non-public(uses __ for att and meth) class members."
+"Basic Decorations: @classmethod, @staticmethod"
+"Classes inside another classes: Inner Classes"
+"Functions inside another functions: nested methods"
 
+#Class attributes:
+"If attributes are constant and do not change between different instances of the Cargo class, it is appropriate to define them as class attributes."
+"They are shared between all instances of the class, which can save memory and avoid redundancy if the values are the same for all instances."
+
+#Instance attributes:
+"If attributes are specific to each instance of the Cargo class and can change from one instance to another, they must be defined as instance attributes."
+"They are initialised when a new instance of the class is created and belong exclusively to that instance."
+
+#Resources
 "classes on Python: https://docs.python.org/3/tutorial/classes.html"
 "https://youtu.be/LwFnF9XoEfM"
 "https://realpython.com/lessons/managing-class-attributes/"
@@ -27,20 +57,9 @@ from relacion_Horiz import RelacionHorizontal
 "Modules and Packages: https://youtu.be/f26nAmfJggw"
 "Public and private classes: https://youtu.be/xY__sjI5yVU"
 "Public and Private members: https://youtu.be/js9EITv4HqM"
-
-"There are not private and protected, just public and non-public(uses __ for att and meth) class members"
 "Passign members from one class to another one: https://youtu.be/iDc_VrawjqY"
-"Basic Decorations: @classmethod, @staticmethod"
-"Classes inside another classes: Inner Classes"
-"Functions inside another functions: nested methods"
-
-#In Python we have class type attributes and instance type attributes. 
-# That is, those not defined in the constructor(__init__) and those that are defined in it.
-#The same ocurrs with methods: class level ones and instance level ones. Key word are self for the 
-#instance level and cls for class level
-#Another kind of method is the static one. Only has access to the parameters that we pass into it individually and then
-#can be used with either the class itself or the instance object
 #endregion
+
 
 class Cargo():
     "static variables: those which are not from other classes"
