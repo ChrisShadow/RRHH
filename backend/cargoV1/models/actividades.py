@@ -25,20 +25,19 @@ class Actividades():
 
     #region methods
 
-    """It creates an Actividades object from a data string and uses the show_data() method to display the 
-    attributes of the created object. Class methods must have cls as the first parameter, which represents 
-    the class itself, so that they can access the class attributes and methods correctly. show_data() as a 
-    non-class method, but an instance method as we do not need to access the class attributes. We simply use 
-    it to show the instance attributes of the Actividades object."""
+    """This function is required because of the values for each created instance of the class,"""
     @classmethod
     def crate_from_string(cls,data_string):
         nombre, nivel=data_string.split(":")
         return cls(nombre.strip(),nivel.strip())
 
-    def show_data(self):
+    """ and then the show_data method can be used as a class method, too. It returns a string 
+    representation of the attributes of the Actividades passed as an argument."""
+    @classmethod
+    def show_data(cls, actividades):
         response={
-            "Nombre de la responsabilidad: ": self.get_nombre(),
-            "Prioridad del cargo(Nivel 1: baja, Nivel 10: alta)": self.get_nivel()
+            "Nombre de la responsabilidad: ": actividades.get_nombre(),
+            "Prioridad del cargo(Nivel 1: baja, Nivel 10: alta)": actividades.get_nivel()
         }
         json_response=json.dumps(response)
         return json_response

@@ -33,6 +33,7 @@ class Divisa():
     def set_valor(self, new_value):
         self.valor=new_value
     
+    "Evaluates the description to define the symbol and the currency value."
     def set_valor_mostrar(self, simbolo ,valor):
         self.valor_mostrar=(f"{simbolo}{valor:,.0f}" if self.descripcion_moneda in ["Guarani","Guaranies"]
                             else f"{simbolo}{valor:,.2f}")
@@ -40,15 +41,17 @@ class Divisa():
     #endregion
 
     #region methods
+
     @classmethod
     def crate_from_string(cls,data_string):
         simbolo, descripcion_moneda,valor,valor_mostrar=data_string.split(",")
         return cls(simbolo.strip(),descripcion_moneda.strip(),valor.strip(),valor_mostrar.strip())
     
-    def show_data(self):
+    @classmethod
+    def show_data(cls, divisa):
         response={
-            "Descripción: ": self.get_descripcion_moneda(),
-            "Monto: ": self.get_valor_mostrar()
+            "Descripción: ": divisa.get_descripcion_moneda(),
+            "Monto: ": divisa.get_valor_mostrar()
         }
         json_response=json.dumps(response)
         return json_response

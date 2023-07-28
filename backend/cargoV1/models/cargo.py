@@ -67,14 +67,11 @@ Passign members from one class to another one: https://youtu.be/iDc_VrawjqY"""
 class Cargo():
     "static variables: those which are not from other classes"
     #region class attibutes
-    "Dictionary type variable constant "
     tipo_funcionario={1:'Asalariado',2:'Tercerizado'}
     periodo_pago={1:'Jornal',2:'Semanal',3:'Quincenal',4:'Mensual'}
     #endregion
 
-    """It is called every time an object is created from a class and lets the class initialize the object's attributes and serves no other purpose
-    self keyword to make sure that the properties are properly bound to the class. There is no use of class declaration if we do not use the self keyword
-    Those which have _X, it is due to non-public member: from another class"""
+    """Constructor lets the class initialize the object's attributes and serves no other purpose"""
     #region constructor
     def __init__(self,name,relacion_v_arriba,relacion_v_abajo,relacion_horizontal,lista_actividad,lista_horario,divisa,indice_tipo_funcionario,pago_funcionario,porcentaje_comision,
                  indice_periodo_pago):
@@ -91,12 +88,13 @@ class Cargo():
         self.indice_periodo_pago=indice_periodo_pago
     #endregion
 
-    "Retrieves the instance attributes."
+    "All get functions retrieve the instance attributes, individually"
     #region getter
     def get_name(self):
         return self.name
     
-    "Here, the method that displays the attributes as a whole in RelacionVArriba is accessed"
+    """Here, the method show_data in RelacionVArriba displays the attributes as a whole in itself is accessed. 
+    Basically the same with the others classes."""
     def get_relacion_v_arriba(self):
         return RelacionVArriba.show_data(self._relacion_v_arriba)
     
@@ -137,7 +135,7 @@ class Cargo():
     
     #endregion
 
-    "Enables to change of the values of those attributes"
+    "All set functions enable to change of the values of those attributes,individually"
     #region setter
     def set_name(self, new_name):
         self.name=new_name
@@ -156,7 +154,6 @@ class Cargo():
 
     def set_lista_horario(self,new_lista_horario):
         self._lista_horario=new_lista_horario
-
 
     def set_divisa(self,new_divisa):
         self._divisa=new_divisa
@@ -191,7 +188,8 @@ class Cargo():
     #endregion
 
    #region class methods
-   #"Here, the dictionary tipo_funcionario is obtained directly using the class name, Cargo."
+    """Here, the dictionary tipo_funcionario is obtained directly using the class name, Cargo."
+    Class-exclusive method, since tipo_funcionario is of class type. The same with periodo_pago"""
     @classmethod
     def get_tipo_funcionario_dict(cls):
         return cls.tipo_funcionario
@@ -200,7 +198,7 @@ class Cargo():
     def get_periodo_pago_dict(cls):
         return cls.periodo_pago
 
-    "Display the data as a whole transformed as a json object"
+    "Display the data as a whole transformed as a json object in order send to the view as a json object."
     def show_data(self):
         
         "In order to determine: Tipo de funcionario y remuneración"
