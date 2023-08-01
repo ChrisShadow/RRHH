@@ -67,3 +67,7 @@ for writting personal info and showing in the profile. Try searching for "custom
 -------------------------------------------------------------------------------------------------------------------------------------
 About fork: To have a copy of some repository and make customisations. With the fork button int the upper right secction (https://youtu.be/9YUaf-uxuRM).
 After that, with ssh url and git clone...
+-------------------------------------------------------------------------------------------------------------------------------------
+To remove: git rm -rf --cache name file or direct 
+git commit
+git push
