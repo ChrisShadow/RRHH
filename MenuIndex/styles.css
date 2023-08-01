@@ -1,0 +1,160 @@
+.254_347 { 
+	overflow:hidden;
+}.new_ui_254_347 { 
+	background-color:rgba(255, 255, 255, 1);
+	width:360px;
+	height:640px;
+	position:absolute;
+}.rectangle_18_254_348 { 
+	box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
+	background-color:rgba(130.0000074505806, 114.0000008046627, 146.00000649690628, 0.8799999952316284);
+	width:360px;
+	height:74px;
+	position:absolute;
+	left:0px;
+	top:0px;
+	border-top-left-radius:1px;
+	border-top-right-radius:1px;
+	border-bottom-left-radius:1px;
+	border-bottom-right-radius:1px;
+}.rectangle_19_254_349 { 
+	box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
+	background-color:rgba(208.46249878406525, 147.6609429717064, 191.43807470798492, 1);
+	width:50px;
+	height:50px;
+	position:absolute;
+	left:37px;
+	top:122px;
+	border-top-left-radius:9px;
+	border-top-right-radius:9px;
+	border-bottom-left-radius:9px;
+	border-bottom-right-radius:9px;
+}.rectangle_21_254_351 { 
+	box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
+	background-color:rgba(148.00663322210312, 96.44666790962219, 156.4000028371811, 0.5299999713897705);
+	width:50px;
+	height:50px;
+	position:absolute;
+	left:149px;
+	top:122px;
+	border-top-left-radius:9px;
+	border-top-right-radius:9px;
+	border-bottom-left-radius:9px;
+	border-bottom-right-radius:9px;
+}.cargos_254_352 { 
+	color:rgba(0, 0, 0, 0.6899999976158142);
+	width:50px;
+	height:18px;
+	position:absolute;
+	left:37px;
+	top:182px;
+	font-family:Poppins;
+	text-align:center;
+	font-size:12px;
+	letter-spacing:0;
+}.usuarios_254_354 { 
+	color:rgba(0, 0, 0, 0.6899999976158142);
+	width:57px;
+	height:27px;
+	position:absolute;
+	left:145px;
+	top:177px;
+	font-family:Poppins;
+	text-align:center;
+	font-size:12px;
+	letter-spacing:0;
+}.user_boton_254_355 { 
+	width:37px;
+	height:29px;
+	position:absolute;
+	left:155px;
+	top:133px;
+	background-image:url(images/user_boton.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+}.cargo_boton_254_358 { 
+	width:52px;
+	height:44px;
+	position:absolute;
+	left:36px;
+	top:125px;
+	background-image:url(images/cargo_boton.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+}.recursos_humanos_254_359 { 
+	color:rgba(255, 255, 255, 1);
+	width:237px;
+	height:38px;
+	position:absolute;
+	left:-7px;
+	top:19px;
+	font-family:Poppins;
+	text-align:center;
+	font-size:16px;
+	letter-spacing:0;
+}.polygon_5_254_362 { 
+	box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
+	transform: rotate(-180deg);
+	background-color:rgba(0, 0, 0, 1);
+	width:11px;
+	height:7px;
+	position:absolute;
+	left:355px;
+	top:40px;
+}.notbell_254_363 { 
+	width:23px;
+	height:23px;
+	position:absolute;
+	left:254px;
+	top:25px;
+	background-image:url(images/notbell.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+}.frame_28_254_365 { 
+	background-color:rgba(129.98271077871323, 114.19041618704796, 145.77499777078629, 1);
+	width:360px;
+	height:12px;
+	position:absolute;
+	left:0px;
+	top:628px;
+}.3585896_2_254_672 { 
+	width:20px;
+	height:23px;
+	position:absolute;
+	left:217px;
+	top:25px;
+	background-image:url(images/3585896_2.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+}.component_1_284_584 { 
+	width:96px;
+	height:129px;
+	position:absolute;
+	left:239px;
+	top:21px;
+}.ellipse_4_i284_584_284_561 { 
+	border-radius:500px;
+	background-color:rgba(241.39999777078629, 241.39999777078629, 241.39999777078629, 0.9100000262260437);
+	width:42px;
+	height:43px;
+	position:absolute;
+	left:59px;
+	top:-7px;
+}.i284_584_284_561 { 
+	border:2px solid rgba(255, 255, 255, 1);
+}.group_28_i284_584_284_387 { 
+	width:32px;
+	height:29px;
+	position:absolute;
+	left:64px;
+	top:0px;
+}.user_i284_584_284_378 { 
+	width:32px;
+	height:29px;
+	position:absolute;
+	left:0px;
+	top:0px;
+	background-image:url(images/user.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+}
