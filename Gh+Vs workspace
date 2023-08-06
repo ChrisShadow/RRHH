@@ -13,3 +13,7 @@ annotations, and exposes the Peek window for a full history view.
 VS Code Live Share- I | Collaborative Programming | Share Workspace, Share Server and Share Terminal
 https://youtu.be/fTgO2VTW7Es
 To beging with: install the vscode plugin, live share
+Secondly: To create a collaboration, with the option related to, after the workspace has been initialised.
+Third step: sing in either git or micros account to begin share the workspace collaboration. With the option "Invite participants", share the url.
+https://prod.liveshare.vsengsaas.visualstudio.com/join?D1B556A5E5E328AE6D836E63767DA3DDDB48
+After this: in order to join to the workspace, through the option "Join collaboration session"
