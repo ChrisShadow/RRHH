@@ -1,0 +1,19 @@
+GitHub Integration in VS Code for the Web
+Source: https://youtu.be/WhBjcj9reBc
+First step: with both git hub account and the branch in question to work with  opened in the browser, by hitting
+dot, the web version is going to open.
+Second: Once the repository is opened by Vscode web version, run the vscode's code to connect a workspace 
+oriented towards various users at the same time= at the left botton corner, click the remote indicator icon and
+choose continue working in vscode.dev
+Third: live server plugin of vscode; also the extension in the browser; GitHub Repositories in plugin vs code desktop; experimental-python for the web(still in progress), 
+GitLens  will meet all your Git needs. eamodio uses the CodeLens UI to show you the most recent commit, number of authors, inline blame 
+annotations, and exposes the Peek window for a full history view. 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+VS Code Live Share- I | Collaborative Programming | Share Workspace, Share Server and Share Terminal
+https://youtu.be/fTgO2VTW7Es
+To beging with: install the vscode plugin, live share
+Secondly: To create a collaboration, with the option related to, after the workspace has been initialised.
+Third step: sing in either git or micros account to begin share the workspace collaboration. With the option "Invite participants", share the url.
+https://prod.liveshare.vsengsaas.visualstudio.com/join?D1B556A5E5E328AE6D836E63767DA3DDDB48
+After this: in order to join to the workspace, through the option "Join collaboration session"
