@@ -1,1 +1,6 @@
 Source: https://youtu.be/WhBjcj9reBc
+First step: with both git hub account and the branch in question to work with  opened in the browser, by hitting
+dot, the web version is going to open.
+Second: Once the repository is opened by Vscode web version, run the vscode's code to connect a workspace 
+oriented towards various users at the same time= at the left botton corner, click the remote indicator icon and
+choose continue working in vscode.dev
