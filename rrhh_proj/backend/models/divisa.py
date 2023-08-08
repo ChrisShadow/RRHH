@@ -2,11 +2,11 @@ import json
 
 class Divisa():
     #region constructor
-    def __init__(self,simbolo,descripcion_moneda,valor,valor_mostrar):
+    def __init__(self,simbolo,descripcion_moneda,valor,valor_mostrar=None):
         self.simbolo=simbolo
         self.descripcion_moneda=descripcion_moneda
         self.valor=valor
-        self.valor_mostrar=None #It will update in the setter
+        self.valor_mostrar=valor_mostrar #It will update in the setter
     #endregion
 
     #region getter
