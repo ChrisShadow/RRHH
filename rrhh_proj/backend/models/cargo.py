@@ -67,8 +67,8 @@ Passign members from one class to another one: https://youtu.be/iDc_VrawjqY"""
 class Cargo():
     "static variables: those which are not from other classes"
     #region class attibutes
-    tipo_funcionario={1:'Asalariado',2:'Tercerizado'}
-    periodo_pago={1:'Jornal',2:'Semanal',3:'Quincenal',4:'Mensual'}
+    TIPOFUNCIONARIO={1:'Asalariado',2:'Tercerizado'}
+    PERIODOPAGO={1:'Jornal',2:'Semanal',3:'Quincenal',4:'Mensual'}
     #endregion
 
     """Constructor lets the class initialize the object's attributes and serves no other purpose"""
@@ -125,13 +125,13 @@ class Cargo():
 
     "Here if the indices change, the values you obtain using get_indice_tipo_funcionario() will also change automatically."
     def get_tipo_funcionario(self):
-        return Cargo.tipo_funcionario[self.get_indice_tipo_funcionario()]
+        return Cargo.TIPOFUNCIONARIO[self.get_indice_tipo_funcionario()]
     
     def get_indice_periodo_pago(self):
         return self.indice_periodo_pago
 
     def get_periodo_pago(self):
-        return Cargo.periodo_pago[self.get_indice_periodo_pago()]
+        return Cargo.PERIODOPAGO[self.get_indice_periodo_pago()]
     
     #endregion
 
@@ -192,11 +192,11 @@ class Cargo():
     Class-exclusive method, since tipo_funcionario is of class type. The same with periodo_pago"""
     @classmethod
     def get_tipo_funcionario_dict(cls):
-        return cls.tipo_funcionario
+        return cls.TIPOFUNCIONARIO
 
     @classmethod
     def get_periodo_pago_dict(cls):
-        return cls.periodo_pago
+        return cls.PERIODOPAGO
 
     "Display the data as a whole transformed as a json object in order send to the view as a json object."
     def show_data(self):
