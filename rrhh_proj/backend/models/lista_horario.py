@@ -1,8 +1,8 @@
 class ListaHorario():
     #Análisis de la lógica para implementar la integración entre lugarTrabajo:Horarios como colección, chatGpt
     #region construct
-    def __init__(self) -> None:
-        pass
+    def __init__(self,test) -> None:
+        self.test=test
     #endregion
 
     #region getter
