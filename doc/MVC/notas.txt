@@ -1,0 +1,391 @@
+Clase 2
+
+El Modelo
+El modelo forma parte de la aplicación que es responsable de la aplicación básica o la lógica comercial. 
+Los objetos de modelo normalmente obtienen acceso a los datos desde un almacén persistente, como SQL Server,
+ y realizan la lógica comercial en esos datos. Los modelos son específicos de la aplicación y, por 
+consiguiente, el marco de ASP.NET MVC no impone ninguna restricción sobre los tipos de objetos de modelo 
+que se pueden generar. Por ejemplo, puede utilizar objetos DataReader o DataSet de ADO.NET o puede utilizar 
+un conjunto personalizado de objetos de dominio. También puede utilizar una combinación de tipos de objeto 
+para trabajar con datos.
+crear un modelo simple para una persona. 
+https://youtu.be/MnTrXgPxgtg
+
+Controladores y métodos de acción en aplicaciones ASP.NET MVC
+Los controladores procesan solicitudes entrantes, controlan los datos proporcionados por el usuario y 
+las interacciones y ejecutan la lógica de la aplicación adecuada. Una clase de controlador llama normalmente 
+a un componente de vista independiente para generar el marcado HTML para la solicitud.
+Todas las clases de controlador deben llevar el sufijo "Controller" en su nombre. En el ejemplo siguiente se 
+muestra la clase de controlador de ejemplo, que se denomina HomeController. Esta clase de controlador contiene 
+métodos de acción que representan las páginas de vista.
+
+¿Qué es el resultado de la acción?
+El resultado de la acción es básicamente el tipo de retorno o el resultado de su método de acción. 
+ActionResult es la clase base para todos los resultados de acciones. El espacio de nombres para esto es
+System.Web.MVC.
+Si necesita devolver un resultado de acción múltiple, puede usar ActionResult como tipo de retorno.
+La siguiente tabla muestra los tipos de resultados de acción incorporados y los métodos auxiliares de acción 
+que los devuelven.
+
+crear un controlador para el modelo Personal.
+https://youtu.be/A3U-zk_mSXQ
+
+Motor de Vistas
+Razor no es en realidad un lenguaje de programación, sino simplemente un motor de vistas. 
+¿Qué significa esto? Básicamente, hay que analizar qué significan las siglas MVC: corresponden 
+al término Modelo-Vista-Controlador, forma en que se denomina a uno de los patrones de arquitectura 
+más populares. En MVC se pretende separar completamente la información que gestiona nuestra aplicación 
+(el Modelo) de la forma en que se presenta (la Vista), desacoplando ambas capas mediante una capa intermedia 
+(el Controlador) que contendrá toda la lógica para trasladar los datos a la presentación visual que deseamos 
+realizar.
+
+
+Crear una vista de ASP.NET MVC llamando a varias acciones
+La manera típica de crear una vista en ASP.NET MVC es llamar a un método de acción que utiliza el
+modelo para preparar los datos de la vista. A continuación, el método de acción llama al método View 
+del controlador para crear la vista. Sin embargo, puede ser conveniente llamar a métodos de acción diferentes
+ para crear las distintas partes de una vista. Por ejemplo, puede haber una página que muestre las últimas 
+noticias, el tiempo y la información deportiva. En ese caso, podría ser útil tener un método de acción que 
+controle las noticias, otro para el tiempo y un tercero para los deportes. De este modo, es posible presentar 
+vistas distintas en condiciones diferentes o desglosar vistas complejas en elementos más pequeños y fáciles de
+controlar.
+https://youtu.be/JCrIE7OC0EQ
+
+
+Diferencias entre MVC y Webforms
+Ambas tecnologías tienen sus pros y sus contras. Depende totalmente de los requisitos del proyecto si 
+ASP.NET webforms o MVC se adapta a las necesidades. 
+MVC que significa Modelo-Vista-Controlador es un patrón de diseño arquitectónico que separa la aplicación 
+en tres unidades lógicas( Modelo (Datos / Entidades de Negocio), Vista (UI), Controlador (Manejador de solicitudes))
+Principales diferencias entre Webforms y MV:
+ASP.NET Webforms(Desarrollo basado en eventos;Uso de los controles del servidor para el diseño de la página, admite el estado de la vista para la gestión del estado; 
+URLs basadas en archivos, se requiere la existencia física del archivo, por ejemplo, para la URL, habrá un archivo físico index.aspx en el servidor; 
+los archivos de diseño aspx están vinculados a los archivos de código aspx.cs; Necesidad de reescribir las URLs para que sean amigables con el SEO) 
+Mientras que ASP.NET MVC(Desarrollo basado en patrones de diseño MVC y no en eventos; No hay controles de servidor, sino que se utilizan controles HTML y ayudantes HTML;
+No hay concepto de estado de vista; URLs basadas en rutas, por lo que no se requiere la existencia física del archivo; No hay acoplamiento estrecho, un controlador puede servir para diferentes vistas; 
+Las URLs amigables con el SEO pueden ser fácilmente formadas sin una compleja reescritura de URLs.)
+The Code Project Open License (CPOL). (Año 2017). ASP.NET MVC vs Webforms. 16 de Marzo del 2021, de CODE PROJECT Sitio web: https://www.codeproject.com/Tips/1167929/ASP-NET-MVC-vs-Webforms
+
+Clase 3
+
+La Herencia
+La Herencia es la característica de los lenguajes orientados a objetos, que le permite a una clase 
+(llamada la sublclase o la clase hijo) heredar todas los miembros de otra (llamada la superclase o la clase 
+padre). En visual basic.net una clase hereda de otra, mediante el uso de la palabra clave Inherits.
+Fundamentos de la herencia (Visual Basic)
+La instrucción Inherits se utiliza para declarar una nueva clase, denominada clase derivada, basada en una clase existente conocida como clase base.
+ Las clases derivadas heredan, y pueden extender, las propiedades, métodos, eventos, campos y constantes definidos en la clase base. 
+En la siguiente sección se describen algunas de las reglas de herencia, así como los modificadores que se pueden utilizar para cambiar 
+la forma en que las clases heredan o son heredadas:
+De forma predeterminada, todas las clases son heredables a menos que se marquen con la palabra clave NotInheritable. 
+Las clases pueden heredar de otras clases del proyecto o de clases en otros ensamblados a los que hace referencia el proyecto.
+A diferencia de los lenguajes que permiten la herencia múltiple, Visual Basic solamente permite la herencia simple en las clases; 
+es decir, las clases derivadas solo pueden tener una clase base. Aunque no se permite la herencia múltiple en las clases, éstas 
+pueden implementar múltiples interfaces, lo que permite lograr de manera eficaz los mismos fines.
+Para evitar la exposición de elementos restringidos en una clase base, el tipo de acceso de una clase derivada 
+debe ser igual o más restrictivo que el de su clase base. 
+
+Modificadores de herencia
+Visual Basic presenta las siguientes instrucciones y modificadores de nivel de clase para ofrecer compatibilidad con la herencia:
+Instrucción Inherits: especifica la clase base.
+Modificador NotInheritable: impide que los programadores utilicen la clase como clase base.
+Modificador MustInherit: especifica que la clase sólo se debe utilizar como clase base. Las instancias de 
+las clases MustInherit no se pueden crear directamente; sólo se pueden crear como instancias de clase base de una clase derivada. 
+Otros lenguajes de programación, como C++ y C#, utilizan el término clase abstracta para describir tal clase.
+Como ejemplo vamos a analizar y definir las clases padres y clases hijas del Proyecto Maratón: 
+https://youtu.be/P74zr0mcY0A
+Creación de Clases Hijas
+https://youtu.be/QRRrpRp2jNE
+Creación del controlador
+https://youtu.be/XIRVBfBAkG8
+Creación de las vistas
+https://youtu.be/pfS_gkHoMv4
+
+
+Clase 4
+Sobrecarga: permite  implementar un método, constructor o instancia con el mismo nombre, pero que reciba distintos argumentos.
+Sobrescritura: la sobrescritura u Overrides, en vb, el override es necesario para ampliar o modificar la implementación abstracta
+ o virtual de un método  propiedad o evento heredado.
+Modelo para vehículo
+https://youtu.be/re6C_sA43ls
+
+Clase 6
+Procedimientos Almacenados
+Un procedimiento almacenado de SQL Server es un grupo de una o varias instrucciones Transact-SQL o una 
+referencia a un método de Common Runtime Language (CLR) de Microsoft .NET Framework . Los procedimientos se 
+asemejan a las construcciones de otros lenguajes de programación, porque pueden:
+-Aceptar parámetros de entrada y devolver varios valores en forma de parámetros de salida al programa que realiza la llamada.
+-Contener instrucciones de programación que realicen operaciones en la base de datos. Entre otras, pueden contener llamadas a 
+otros procedimientos.
+- Devolver un valor de estado a un programa que realiza una llamada para indicar si la operación se ha realizado correctamente 
+o se han producido errores, y el motivo de estos.
+
+Ventajas de usar procedimientos almacenados
+En la siguiente lista se describen algunas de las ventajas que brinda el uso de procedimientos.
+
+Tráfico de red reducido entre el cliente y el servidor
+Los comandos de un procedimiento se ejecutan en un único lote de código. Esto puede reducir significativamente
+ el tráfico de red entre el servidor y el cliente porque únicamente se envía a través de la red la llamada que 
+va a ejecutar el procedimiento. Sin la encapsulación de código que proporciona un procedimiento, cada una de 
+las líneas de código tendría que enviarse a través de la red.
+
+Mayor seguridad
+Varios usuarios y programas cliente pueden realizar operaciones en los objetos de base de datos subyacentes a 
+través de un procedimiento, aunque los usuarios y los programas no tengan permisos directos sobre esos objetos 
+subyacentes. El procedimiento controla qué procesos y actividades se llevan a cabo y protege los objetos de 
+base de datos subyacentes. Esto elimina la necesidad de conceder permisos en cada nivel de objetos y simplifica
+los niveles de seguridad.
+La cláusula EXECUTE AS puede especificarse en la instrucción CREATE PROCEDURE para habilitar la suplantación de
+ otro usuario o para permitir que los usuarios o las aplicaciones puedan realizar ciertas actividades en la 
+base de datos sin necesidad de contar con permisos directos sobre los objetos y comandos subyacentes. Por 
+ejemplo, algunas acciones como TRUNCATE TABLE no tienen permisos que se puedan conceder. Para poder ejecutar 
+TRUNCATE TABLE, el usuario debe tener permisos ALTER en la tabla especificada. Puede que la concesión de
+ permisos ALTER a un usuario en una tabla no sea lo ideal, pues en realidad el usuario tendrá permisos muy 
+superiores a la posibilidad de truncar una tabla. Si se incorpora la instrucción TRUNCATE TABLE en un módulo y 
+se especifica la ejecución del módulo como un usuario con permisos para modificar la tabla, se pueden ampliar 
+los permisos para truncar la tabla al usuario al que se concedan permisos EXECUTE para el módulo.
+Al llamar a un procedimiento a través de la red, solo está visible la llamada que va a ejecutar el procedimiento.
+Por lo tanto, los usuarios malintencionados no pueden ver los nombres de los objetos de base de datos y tabla, 
+incrustados en sus propias instrucciones Transact-SQL , ni buscar datos críticos.
+El uso de parámetros de procedimientos ayuda a protegerse contra ataques por inyección de código SQL. Dado que 
+la entrada de parámetros se trata como un valor literal y no como código ejecutable, resulta más difícil para 
+un atacante insertar un comando en la instrucción Transact-SQL del procedimiento y comprometer la seguridad.
+Los procedimientos pueden cifrarse, lo que ayuda a ofuscar el código fuente. Para más información, consulte
+SQL Server Encryption.
+
+Reutilización del código
+El código de cualquier operación de base de datos redundante resulta un candidato perfecto para la encapsulación
+de procedimientos. De este modo, se elimina la necesidad de escribir de nuevo el mismo código, se reducen las inconsistencias de código y se permite que cualquier usuario o aplicación que cuente con los permisos necesarios pueda acceder al código y ejecutarlo.
+
+Mantenimiento más sencillo
+Cuando las aplicaciones cliente llaman a procedimientos y mantienen las operaciones de base de datos en la 
+capa de datos, solo deben actualizarse los cambios de los procesos en la base de datos subyacente. El nivel de
+aplicación permanece independiente y no tiene que tener conocimiento sobre los cambios realizados en los diseños
+,las relaciones o los procesos de la base de datos.
+
+Rendimiento mejorado
+De forma predeterminada, un procedimiento se compila la primera vez que se ejecuta y crea un plan de ejecución
+ que vuelve a usarse en posteriores ejecuciones. Como el procesador de consultas no tiene que crear un nuevo 
+plan, normalmente necesita menos tiempo para procesar el procedimiento.
+Si ha habido cambios importantes en las tablas o datos a los que se hace referencia en el procedimiento, el 
+plan precompilado podría hacer que el procedimiento se ejecutara con mayor lentitud. En este caso, volver a 
+crear el procedimiento y forzar un nuevo plan de ejecución puede mejorar el rendimiento. 	
+
+
+Algunos procedimientos almacenados para el proyecto Restaurante.
+https://youtu.be/uvGSL6GqBEY
+
+Gestores de bases de datos más utilizados
+https://www.diarlu.com/gestores-bases-datos/
+
+
+Clase 7
+Estructura en capas de la solución y la creación de la clase categoria.
+https://youtu.be/SDwp6ieuERI
+
+Una vez creado la clase de la tabla categiria podemos crear el controlador para definir las acciones del usuario.
+https://youtu.be/PRiIjWc38vI
+
+En el siguiente tutorial creamos las vistas en la capa de presentación
+https://youtu.be/HaIJbG9bA6M
+
+Qué es JQuery
+JQuery es una librería de JavaScript (JavaScript es un lenguaje de programación muy usado en desarrollo web). 
+Esta librería de código abierto, simplifica la tarea de programar en JavaScript y permite agregar interactividad 
+a un sitio web sin tener conocimientos del lenguaje.
+Existe una infinita cantidad de plugins (gratis y pagos) creados por desarrolladores de todo el mundo. 
+Estos plugins resuelven situaciones concretas dentro del maquetado de un sitio, por ejemplo: un menú 
+responsive, una galería de fotos, un carrousel de imágenes, un slide, un header que cambia de tamaño, 
+el deslizamiento del scroll al hacer clic en un botón (anclas HTML), la transición entre páginas y miles de 
+efectos más.
+
+Librería JQuery
+Todos los plugins de JQuery necesitan la librería de JQuery para funcionar. La librería es un archivo .js que
+ se puede descargar desde el sitio oficial: https://jquery.com/ colocar en una carpeta js y luego vincular con
+ una etiqueta <script>, por ejemplo: <script src="js/jquery-3.2.1.min.js"></script>
+Ese vínculo conviene colocarlo dentro del body y hacia el final del HTML para no demorar la carga de los 
+contenidos
+Otra forma de vincular la librería es utilizando el servidor de Google. De esta manera no necesitamos 
+descargarla ni subirla a nuestro servidor. En ese caso, el código es el mismo pero con ruta absoluta:
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+Los archivos .min son archivos que están optimizados (con el código comprimido) y no son editables, 
+se usan en producción cuando se considera que no es necesario hacerle modificaciones. La ventaja es que 
+son más livianos y por lo tanto cargan más rápido.
+Estructura
+<html>
+ <head></head>
+<body>
+     <script src="jquery-1.3.2.min.js" type="text/javascript"></script> 
+</body>
+</html>
+Ajax
+AJAX son las siglas de Asynchronous JavaScript And XML, (Javascript asíncrono y XML).
+No es en sí un lenguaje de programación, sino una nueva técnica que combina varios lenguajes de programación.
+Con esta tecnología podemos cargar en segundo plano varias solicitudes, sin que afecten a la visualización
+ni comportamiento de la página.
+
+ $.ajax({
+    //La url para la petición
+    url: '/controlador/acción',
+    //Definimos parametros que se va enviar
+    data: { parametro1: valor1, parametro2: valor2 },
+    //La forma de envio Post o get
+    type: 'GET',
+    //El tipo de dato de dato que va retornar la acción
+    dateType: 'json',
+    success: function (retorno) {
+      //Operación
+     }
+})
+
+
+Clase 8 
+
+Frontend con Bootstrap
+Es la parte de un programa o dispositivo a la que un usuario puede acceder directamente. Son todas las 
+tecnologías de diseño y desarrollo web que corren en el navegador y que se encargan de la interactividad 
+con los usuarios. HTML, CSS y JavaScript son los lenguajes principales del Frontend, de los que se desprenden 
+una cantidad de frameworks y librerías que expanden sus capacidades para crear cualquier tipo de interfaces de 
+usuarios. React, Redux, Angular, Bootstrap, Foundation, LESS, Sass, Stylus y PostCSS son algunos de ellos.
+
+Introducción e instalación
+Bootstrap es un framework basado en HTML y CSS, fue creado por Twitter y lo liberó en 2012, desde entonces 
+ha ganado muchos adeptos, hasta el nivel de contar con la mayor comunidad de Github del mundo.
+Este framework nos ayuda a agilizar la creación del interfaz de nuestra página web. Con la particularidad, 
+que usando Bootstrap, nuestro sitio estará adaptado a la pantalla del dispositivos con el que accedemos, ya sea
+un ordenador, tablet, smartphone, televisión.... Esto significa que tendremos una Web responsive o adaptativa, y 
+desde hace pocos meses, es fundamental de cara al posicionamiento en Google.
+Además de agilizar la creación de nuestra Web, con Bootstap conseguiremos crear un diseño limpio, intuitivo, usable
+y de poco peso, por lo que la carga de nuestra web será muy rápida. Es muy cómodo, porque muchas de las funcionalidades 
+que necesitaremos ya están desarrolladas, y si no, tienes acceso a una gran cantidad de documentación en varios idiomas 
+y una comunidad que dará respuestas a todas tus dudas.
+
+¿Por qué usar Bootstrap?
+-Tendremos una Web responsive, se vera bien en todos los dispositivos y ayudará al posicionamiento en buscadores.
+-Cómodo, tendremos gran cantidad de funcionalidades creadas.
+-La velocidad de carga de la web es rápida y también ayuda al posicionamiento.
+-Compatibilidad con la mayoría de navegadores.
+-En constante desarrollo, tiene una gran comunidad detrás y el framework va mejorando cada vez más.
+
+Frameworks para Frontend más populares en 2020
+https://openwebinars.net/blog/frameworks-para-frontend-mas-populares-en-2020/
+
+Clase 11
+
+
+http://blog.creative-tim.com/web-design/free-dashboard-templates/
+
+https://www.creative-tim.com/product/material-dashboard
+
+https://materializecss.com/icons.html
+
+A continuación el video tutorial del desarrollo de la clase.
+
+https://youtu.be/1GTEtcCCogY
+https://okhosting.com/blog/en-que-consiste-una-plantilla-web/
+
+46 Free Bootstrap Admin Dashboard Templates For Your Web App 2021
+https://colorlib.com/wp/free-bootstrap-admin-dashboard-templates/
+
+Clase 12
+
+¿Qué es el web.Config?
+Archivo básico de configuración para toda aplicación asp.net. En él, mediante un etiquetado XML, se configura 
+todo lo referente a seguridad, sessiones, compilación, variables de sistema, etc... También puede ser usado 
+para almacenar parámetros de la aplicación, como cadenas de conexión o variables globales.
+El web.config suele colocarse en el directorio raíz de la aplicación, pero pueden existir más dentro de las 
+carpetas para dar configuraciones parciales para los distintos segmentos de las aplicaciones.
+
+Secciones de un web.config
+
+<configuration>
+ <configSections>
+ …
+ </configSections>
+ 
+ <!--Sección de variables de app. 
+ Aquí pueden declararse variables a usar en toda la aplicación.-->
+ <appSettings>
+ <add key="key1" value="value1" />
+ <add key="key2" value="value2" />
+ </appSettings>
+
+<system.web>
+ <httpModules>
+ 
+ </httpModules>
+
+<!--Tamaño máximo de las peticiones-->
+ <httpRuntime maxRequestLength="1024000" executionTimeout="3600" />
+
+<!--Configuración de las sessiones-->
+ <sessionState timeout="60" />
+
+<!--Habilitando y estableciendo duración de las cookies-->
+ <sessionState cookieless="true" timeout="10"/>
+
+<!--Permisos de seguridad-->
+ <authorization> 
+ ...
+ </authorization>
+
+<compilation>
+ <!--Ensamblados de la app-->
+ <assemblies>
+ ... 
+ </assemblies>
+ </compilation>
+ </system.web>
+</configuration>
+
+Como utilizar una variable definido en el archivo web.config
+ConfigurationManager.AppSettings("key1")
+
+Otros modulos configurables en el web.config
+Establecer permisos de seguridad para cada sección de la web. Es posible añadir un web.config particular en 
+una carpeta en la que desees establecer un nivel de seguridad con un rol de usuario. Para ello es tan sencillo
+ como crear un nuevo web.config y añadir las siguientes líneas:
+ <system.web>
+   <authorization>
+      <allow roles="Administrador,Editor" />
+      <deny users="*" />
+  </authorization>
+</system.web>
+En este ejemplo vemos como permitimos la entrada a esta sección a los administradores y editores, negándoselo 
+al resto de usuarios.
+También es posible establecer reglas de enrutamiento para las urls de la aplicación. Con esto podemos crear 
+url’s amigables en cualquier web.
+Puede ser usado para muchas más cosas como declarar y configurar módulos externos de .net, como librerías 
+para el cache, filtrados de rangos de ips, etc..
+Jquery DataTables
+DataTables es un plug-in para la biblioteca jQuery Javascript. Es una herramienta altamente flexible, basada 
+en los fundamentos de la mejora progresiva, y agregará controles de interacción avanzados a cualquier tabla 
+HTML.
+El jquery nos permite la paginación, búsqueda instantánea y ordenación de múltiples columnas
+A continuación el video tutorial del la instalación en el proyecto restaurante.
+https://youtu.be/okaopz4-RCI
+
+Los 15 mejores plugins gratuitos para crear tablas en jQuery
+https://programacion.net/articulo/los_15_mejores_plugins_gratuitos_para_crear_tablas_en_jquery_1043
+
+clae 13
+Las ventanas modales son recursos muy utilizados en los sitios web para mostrar promociones, productos 
+destacados o para solicitar la confirmación del usuario para procesar una tarea.
+Las ventanas modales de Twitter Bootstrap se crean usando un plugin de jQuery personalizado. Se puede usar 
+para crear ventanas emergentes para enriquecer la experiencia del usuario o para añadir funcionalidad a los 
+usuarios.
+Es una capa que se superpone a las demás quedando en primer plano de nuestra web y dejando en un segundo plano 
+el resto de la página. Para que el usuario no capte la atención en otro componente que no sea el modal, se 
+suele crear éste dentro de otra capa que ocupa el 100% del ancho y del alto de la ventana con un mínimo de 
+opacidad y tono oscuro.
+No confundir el concepto de modal con el de popup. Un popup es una ventana emergente que genera la página, 
+es decir, que mientras el modal está en la misma ventana (o tab) de nuestro navegador, el popup generará otra 
+ventana donde mostrará la información que requiera.
+Las librerías para el modal
+Las librerías que se deben obtener son las siguientes:
+Jquery
+Bootstrap
+clase14
+JSON es un formato de texto ligero para el intercambio de datos. JSON es un subconjunto de la notación literal 
+de objetos de JavaScript aunque hoy, debido a su amplia adopción como alternativa a XML, se considera un 
+formato de lenguaje independiente	

@@ -1,0 +1,34 @@
+Notación Decimal Dewey para desglosar cuestiones
+-Calendar, cronogramas de actividades
+10/04-21:00
+-Conectados quattro
+-Figma,13/04-12:00
+-Nombre de empresa viernes 14/04
+
+Lluvia ideas necesidades
+-Simplificar operaciones/procesos
+-Mejora continua
+-Automatizar presupuestos organizadamente
+-Rendimiento tecnológico
+-Seguimiento horarios y de actividades en base a resultados.
+
+Conceptos: clases, atributo, métodos
+
+https://docs.google.com/spreadsheets/d/1iXLn_rvvfQdY_8Ltz0qNXrV0A_eE_-79K50yHa3IfXQ/edit?usp=sharing
+
+
+Gestión del personal: El sistema debe contar con una base de datos actualizada y completa de todos los empleados, incluyendo información personal, datos de contacto, historial laboral, capacitaciones y certificaciones, entre otros.
+
+Evaluación del desempeño: Se debe implementar un sistema de evaluación del desempeño que permita medir y analizar el rendimiento de los empleados, identificar fortalezas y áreas de mejora, y establecer objetivos y metas a corto y largo plazo.
+
+Planificación de carrera: Es importante contar con un sistema que permita la planificación de la carrera de los empleados, identificar sus intereses, habilidades y destrezas, y ofrecer oportunidades de capacitación y desarrollo profesional.
+
+Gestión de compensaciones y beneficios: El sistema debe incluir información sobre los salarios, bonificaciones, incentivos y otros beneficios que se ofrecen a los empleados, y permitir su administración y seguimiento.
+
+Gestión del tiempo y asistencia: El sistema debe permitir la gestión del tiempo y asistencia de los empleados, incluyendo horarios de trabajo, permisos y vacaciones, y ausencias.
+
+Comunicación y retroalimentación: Es importante contar con un sistema que permita la comunicación y retroalimentación efectiva entre los empleados y la empresa, facilitando el intercambio de información y la resolución de problemas.
+
+Cumplimiento legal y regulatorio: El sistema debe asegurar el cumplimiento de las leyes y regulaciones laborales y proteger la privacidad de los datos de los empleados.
+
+Análisis y reportes: El sistema debe contar con herramientas de análisis y generación de reportes que permitan el monitoreo y evaluación del desempeño de los empleados, la identificación de tendencias y patrones, y la toma de decisiones informadas.

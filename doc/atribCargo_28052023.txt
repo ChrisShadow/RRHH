@@ -1,0 +1,15 @@
+Clase: herencia, encapsulamiento, polimorfismo, abstracción
+Cargo, clase
+nombre, sólo atrib
+relacion vertical arriba, clase: nombre
+relacion vertical abajo, clase: nombre
+funcion, clase: nombre
+//Definir unificiación
+lugar trabajo, clase: nombre, ubicación
+horario, clase: día, horainicio, horafin
+economico, clase: asalariado, tercerizado, clase: salario/viático,clase:moneda, comisión 
+período pago, clase: rangofecha
+
+
+
+
