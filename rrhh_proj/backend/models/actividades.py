@@ -20,14 +20,21 @@ class Actividades():
         self.nombre=new_name
 
     def set_nivel(self, new_level):
-        self.nivel=new_level
+        valid_options=['Alto', 'Medio', 'Bajo']
+        if new_level in valid_options:
+            self.nivel=new_level
+        else:
+            print("Prioridad no válida. Debe ser 'Alto', 'Medio' o 'Bajo'.")
     #endregion
 
     #region methods
 
-    """This function is required because of the values for each created instance of the class,"""
+    """
+    This function is required because of the values for each created instance of the class. 
+    It does create an object from a data string
+    """
     @classmethod
-    def crate_from_string(cls,data_string):
+    def create_from_string(cls,data_string):
         nombre, nivel=data_string.split(":")
         return cls(nombre.strip(),nivel.strip())
 
@@ -37,12 +44,8 @@ class Actividades():
     def show_data(cls, actividades):
         response={
             "Nombre de la responsabilidad: ": actividades.get_nombre(),
-            "Prioridad del cargo(Nivel 1: baja, Nivel 10: alta)": actividades.get_nivel()
+            "Prioridad del cargo": actividades.get_nivel()
         }
         json_response=json.dumps(response)
         return json_response
     #endregion
-
-    
-
-    

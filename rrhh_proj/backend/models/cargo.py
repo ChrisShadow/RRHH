@@ -79,9 +79,9 @@ class Cargo():
         self._relacion_v_arriba=relacion_v_arriba
         self._relacion_v_abajo=relacion_v_abajo
         self._relacion_horizontal=relacion_horizontal
-        self._lista_actividad=lista_actividad #ListaActividades()
-        self._lista_horario=lista_horario #ListaHorario()
-        self._divisa=divisa #Divisa
+        self._lista_actividad=lista_actividad # as a parameter of assigned instance of lista_actividad #ListaActividades() as created instance for each Cargos' instance
+        self._lista_horario=lista_horario  #  #ListaHorario()
+        self._divisa=divisa #  #Divisa
         self.indice_tipo_funcionario=indice_tipo_funcionario
         self.pago_funcionario=pago_funcionario
         self.porcentaje_comision=porcentaje_comision

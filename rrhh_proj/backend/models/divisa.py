@@ -43,7 +43,7 @@ class Divisa():
     #region methods
 
     @classmethod
-    def crate_from_string(cls,data_string):
+    def create_from_string(cls,data_string):
         simbolo, descripcion_moneda,valor,valor_mostrar=data_string.split(",")
         return cls(simbolo.strip(),descripcion_moneda.strip(),valor.strip(),valor_mostrar.strip())
     
