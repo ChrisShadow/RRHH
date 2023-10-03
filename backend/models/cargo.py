@@ -1,9 +1,9 @@
 from divisa import Divisa
 from lista_actividades import ListaActividades
 from lista_horario import ListaHorario
-from rela_v_abajo import RelacionVAbajo
+""" from rela_v_abajo import RelacionVAbajo
 from rela_v_arriba import RelacionVArriba
-from relacion_Horiz import RelacionHorizontal
+from relacion_Horiz import RelacionHorizontal """
 
 import json
 
@@ -73,12 +73,9 @@ class Cargo():
 
     """Constructor lets the class initialize the object's attributes and serves no other purpose"""
     #region constructor
-    def __init__(self,name,relacion_v_arriba,relacion_v_abajo,relacion_horizontal,lista_actividad,lista_horario,divisa,indice_tipo_funcionario,pago_funcionario,porcentaje_comision,
+    def __init__(self,name,lista_actividad,lista_horario,divisa,indice_tipo_funcionario,pago_funcionario,porcentaje_comision,
                  indice_periodo_pago):
         self.name=name
-        self._relacion_v_arriba=relacion_v_arriba
-        self._relacion_v_abajo=relacion_v_abajo
-        self._relacion_horizontal=relacion_horizontal
         self._lista_actividad=lista_actividad # as a parameter of assigned instance of lista_actividad #ListaActividades() as created instance for each Cargos' instance
         self._lista_horario=lista_horario  #  #ListaHorario()
         self._divisa=divisa #  #Divisa
@@ -86,6 +83,12 @@ class Cargo():
         self.pago_funcionario=pago_funcionario
         self.porcentaje_comision=porcentaje_comision
         self.indice_periodo_pago=indice_periodo_pago
+
+        #Vertical relationships (top and bottom)
+        self._relacion_v_arriba=[] #as an empty list
+        self._relacion_v_abajo=[] #as an empty list
+        #Horizontaal relationships (positions at the same level)
+        self._relacion_horizontal=[] #as an empty list
     #endregion
 
     "All get functions retrieve the instance attributes, individually"
@@ -93,17 +96,7 @@ class Cargo():
     def get_name(self):
         return self.name
     
-    """Here, the method show_data in RelacionVArriba displays the attributes as a whole in itself is accessed. 
-    Basically the same with the others classes."""
-    def get_relacion_v_arriba(self):
-        return RelacionVArriba.show_data(self._relacion_v_arriba)
-    
-    def get_relacion_v_abajo(self):
-        return RelacionVAbajo.show_data(self._relacion_v_abajo) 
-    
-    def get_relacion_horizontal(self):
-        return RelacionHorizontal.show_data(self._relacion_horizontal) 
-    
+    #show_data displays the attributes of the accessed class
     def get_lista_actividad(self):
         return ListaActividades.show_data(self._lista_actividad)
     
@@ -132,6 +125,16 @@ class Cargo():
 
     def get_periodo_pago(self):
         return Cargo.PERIODOPAGO[self.get_indice_periodo_pago()]
+    
+    """For obtaining the relations"""
+    def get_relacion_v_arriba(self):
+        return self._relacion_v_arriba
+    
+    def get_relacion_v_abajo(self):
+        return self._relacion_v_abajo
+    
+    def get_relacion_horizontal(self):
+        return self._relacion_horizontal
     
     #endregion
 
@@ -197,6 +200,29 @@ class Cargo():
     @classmethod
     def get_periodo_pago_dict(cls):
         return cls.PERIODOPAGO
+    
+    #Methods for adding charges to relationships
+    def add_relacion_v_arriba(self,cargo):
+        self._relacion_v_arriba.append(cargo)
+
+    def add_relacion_v_abajo(self,cargo):
+        self._relacion_v_abajo.append(cargo)
+
+    def add_relacion_horizontal(self,cargo):
+        self._relacion_horizontal.append(cargo)
+
+    #Methods to remove charges from relationships
+    def delete_relacion_v_arriba(self,cargo):
+        if cargo in self._relacion_v_arriba:
+            self._relacion_v_arriba.remove(cargo)     
+    
+    def delete_relacion_v_abajo(self,cargo):
+        if cargo in self._relacion_v_abajo:
+            self._relacion_v_abajo.remove(cargo)  
+
+    def delete_relacion_horizonta(self,cargo):
+        if cargo in self._relacion_horizontal:
+            self._relacion_horizontal.remove(cargo)  
 
     "Display the data as a whole transformed as a json object in order send to the view as a json object."
     def show_data(self):
