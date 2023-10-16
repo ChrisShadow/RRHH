@@ -1,4 +1,4 @@
-from actividades import Actividades
+from models.actividades import Actividades
 import json
 
 
@@ -10,9 +10,13 @@ class ListaActividades():
     #endregion
 
     #region methods
-    def add_actividad(self, name,level):
+    def add_actividad(self,*actividades):
+        for actividad in actividades:
+            self.lista_actividad[actividad.get_nombre()]=actividad
+
+    """def add_actividad(self, name,level):
         actividad=Actividades(name,level)
-        self.lista_actividad[name]=actividad
+        self.lista_actividad[name]=actividad"""
 
     def update_actividad(self, name, level):
         if name in self.lista_actividad:
@@ -23,9 +27,17 @@ class ListaActividades():
         if name in self.lista_actividad:
             del self.lista_actividad[name]
 
-    def show_data(self):
+    """def show_data(self):
         act_dict={}
         for actividad in self.lista_actividad:
             act_dict[actividad.get_nombre()]=actividad.get_nivel()
+        return json.dumps(act_dict)"""
+    
+    
+    def show_data(self):
+        act_dict={}
+        for name,actividad in self.lista_actividad.items():
+            act_dict[name]=actividad.get_nivel()
         return json.dumps(act_dict)
+    
     #endregion
