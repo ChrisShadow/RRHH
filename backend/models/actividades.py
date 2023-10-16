@@ -24,7 +24,8 @@ class Actividades():
         if new_level in valid_options:
             self.nivel=new_level
         else:
-            print("Prioridad no válida. Debe ser 'Alto', 'Medio' o 'Bajo'.")
+            #raise ValueError("Prioridad no válida. Debe ser 'Alto', 'Medio' o 'Bajo'.")
+            print(("Prioridad no válida. Debe ser 'Alto', 'Medio' o 'Bajo'."))
     #endregion
 
     #region methods
@@ -35,7 +36,12 @@ class Actividades():
     """
     @classmethod
     def create_from_string(cls,data_string):
-        nombre, nivel=data_string.split(":")
+        nombre, nivel=map(str.strip, data_string.lstrip().split(":"))
+
+        if nivel.lstrip() not in ['Alto', 'Medio', 'Bajo']:
+            #raise ValueError("Prioridad no válida. Debe ser 'Alto', 'Medio' o 'Bajo'.")
+            print("Prioridad no válida. Debe ser 'Alto', 'Medio' o 'Bajo'.")
+            nivel='Medio'
         return cls(nombre.strip(),nivel.strip())
 
     """ and then the show_data method can be used as a class method, too. It returns a string 
