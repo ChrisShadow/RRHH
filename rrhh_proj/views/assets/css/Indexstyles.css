@@ -3,7 +3,7 @@ body {
 	background-color: rgba(255, 255, 255, 1);
 	width: 360px;
 	height: 640px;
-	position: absolute;
+
 }
 
 
@@ -15,9 +15,9 @@ Section header
 header {
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	background-color: rgba(130.0000074505806, 114.0000008046627, 146.00000649690628, 0.8799999952316284);
-	width: 360px;
+
 	height: 74px;
-	position: absolute;
+
 	left: 0px;
 	top: 0px;
 	border-top-left-radius: 1px;
@@ -185,4 +185,49 @@ Body
 	top: 125px;
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+
+/* Responsive */
+/* Standar Telefonos: 320px-414px; tabletas 768px-1280px; computadoras 1366px-1920px */
+
+/* Telefonos */
+@media (max-width: 414px) {
+	body {
+		margin: 0;
+		position: absolute;
+	}
+
+	header {
+		width: 414px;
+		position: absolute;
+	}
+
+}
+
+/* Tablets */
+@media (max-width: 1280px) {
+	body {
+		margin: 0;
+		position: -webkit-sticky;
+	}
+
+	header {
+		width: 1280px;
+		position: -webkit-sticky;
+	}
+
+}
+
+/* Computadoras */
+@media (max-width: 1920px) {
+	body {
+		margin: 0;
+		position: -webkit-sticky;
+	}
+
+	header {
+		width: 1920px;
+		position: -webkit-sticky;
+	}
+
 }
