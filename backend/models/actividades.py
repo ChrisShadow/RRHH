@@ -26,6 +26,7 @@ class Actividades():
         else:
             #raise ValueError("Prioridad no válida. Debe ser 'Alto', 'Medio' o 'Bajo'.")
             print(("Prioridad no válida. Debe ser 'Alto', 'Medio' o 'Bajo'."))
+            self.nivel='Medio(Default)'
     #endregion
 
     #region methods
@@ -41,7 +42,7 @@ class Actividades():
         if nivel.lstrip() not in ['Alto', 'Medio', 'Bajo']:
             #raise ValueError("Prioridad no válida. Debe ser 'Alto', 'Medio' o 'Bajo'.")
             print("Prioridad no válida. Debe ser 'Alto', 'Medio' o 'Bajo'.")
-            nivel='Medio'
+            nivel='Medio(Default)'
         return cls(nombre.strip(),nivel.strip())
 
     """ and then the show_data method can be used as a class method, too. It returns a string 

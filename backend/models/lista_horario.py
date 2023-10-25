@@ -1,5 +1,5 @@
-from horario import Horario
-from lugar_trabajo import LugarTrabajo
+from models.horario import Horario
+from models.lugar_trabajo import LugarTrabajo
 import json
 
 class ListaHorario():
