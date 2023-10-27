@@ -14,7 +14,7 @@ class LugarTrabajo():
         return self.nombre_empresa
 
     def get_sucursal(self):
-        return self.get_sucursal
+        return self.sucursal
     
     def get_ciudad(self):
         return self.ciudad
@@ -40,8 +40,7 @@ class LugarTrabajo():
     #region methods
     @classmethod
     def create_from_string(cls, data_string):
-        nombre_empresa, sucursal, ciudad, ubicacion = data_string.split(
-            ",")
+        nombre_empresa, sucursal, ciudad, ubicacion = data_string.split(",")
         return cls(nombre_empresa.strip(), sucursal.strip(), ciudad.strip(), ubicacion.strip())
 
     @classmethod
@@ -50,7 +49,7 @@ class LugarTrabajo():
             "Empresa: ": lugar_trabajo.get_nombre_empresa(),
             "Sucursal: ": lugar_trabajo.get_sucursal() ,
             "Ciudad: ": lugar_trabajo.get_ciudad(),
-            "Ubicación: ":lugar_trabajo.get_ubicacion()
+            "Ubicacion: ":lugar_trabajo.get_ubicacion()
         }
         json_response = json.dumps(response)
         return json_response
