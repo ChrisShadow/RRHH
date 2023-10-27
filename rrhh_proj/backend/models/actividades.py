@@ -20,15 +20,28 @@ class Actividades():
         self.nombre=new_name
 
     def set_nivel(self, new_level):
-        self.nivel=new_level
+        valid_options=['Alto', 'Medio', 'Bajo']
+        if new_level in valid_options:
+            self.nivel=new_level
+        else:
+            #raise ValueError("Prioridad no válida. Debe ser 'Alto', 'Medio' o 'Bajo'.")
+            print(("Prioridad no válida. Debe ser 'Alto', 'Medio' o 'Bajo'."))
     #endregion
 
     #region methods
 
-    """This function is required because of the values for each created instance of the class,"""
+    """
+    This function is required because of the values for each created instance of the class. 
+    It does create an object from a data string
+    """
     @classmethod
-    def crate_from_string(cls,data_string):
-        nombre, nivel=data_string.split(":")
+    def create_from_string(cls,data_string):
+        nombre, nivel=map(str.strip, data_string.lstrip().split(":"))
+
+        if nivel.lstrip() not in ['Alto', 'Medio', 'Bajo']:
+            #raise ValueError("Prioridad no válida. Debe ser 'Alto', 'Medio' o 'Bajo'.")
+            print("Prioridad no válida. Debe ser 'Alto', 'Medio' o 'Bajo'.")
+            nivel='Medio'
         return cls(nombre.strip(),nivel.strip())
 
     """ and then the show_data method can be used as a class method, too. It returns a string 
@@ -37,7 +50,7 @@ class Actividades():
     def show_data(cls, actividades):
         response={
             "Nombre de la responsabilidad: ": actividades.get_nombre(),
-            "Prioridad del cargo(Nivel 1: baja, Nivel 10: alta)": actividades.get_nivel()
+            "Prioridad del cargo": actividades.get_nivel()
         }
         json_response=json.dumps(response)
         return json_response

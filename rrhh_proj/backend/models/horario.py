@@ -41,7 +41,7 @@ class Horario():
 
     # region methods
     @classmethod
-    def crate_from_string(cls, data_string):
+    def create_from_string(cls, data_string):
         dias, hora_inicio, hora_fin = data_string.split(
             ",")
         return cls(dias.strip(), hora_inicio.strip(), hora_fin.strip())

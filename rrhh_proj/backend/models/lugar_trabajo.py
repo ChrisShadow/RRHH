@@ -39,7 +39,7 @@ class LugarTrabajo():
 
     #region methods
     @classmethod
-    def crate_from_string(cls, data_string):
+    def create_from_string(cls, data_string):
         nombre_empresa, sucursal, ciudad, ubicacion = data_string.split(
             ",")
         return cls(nombre_empresa.strip(), sucursal.strip(), ciudad.strip(), ubicacion.strip())
