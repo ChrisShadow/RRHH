@@ -1,6 +1,7 @@
 from models.actividades import Actividades
 from models.lista_actividades import ListaActividades
-from models.lista_horario import LugarTrabajo
+from models.lista_horario import ListaHorario
+from models.lugar_trabajo import LugarTrabajo
 from models.horario import Horario
 """from models.cargo import Cargo
 from models.divisa import Divisa
@@ -166,11 +167,22 @@ def main():
         horario4_data_string="Viernes,Sabado,Domingo,08,15;00"
         horario4=Horario.create_from_string(horario4_data_string)
 
-        horario5_data_string="Sabado,Domingo,24:00,21:60"
+        horario5_data_string="Sabado,Domingo,23:00,21:59"
         horario5=Horario.create_from_string(horario5_data_string)
         #endregion
 
         #region ListaHorario
+        #Creating an instance of it
+        lista_horarios=ListaHorario()
+
+        #Adding Actividades
+        lista_horarios.add_horario_lugar_trabajo(lugar_trabajo3,[horario2,horario1,horario5])
+
+        #Showing datas of the list
+        data_horarios_as_json=lista_horarios.show_data()
+        print(f"\nRegion Lista Horarios\nData as JSON format of ListaHorarios\n"+
+            f"{data_horarios_as_json}")
+
 
         #endregion
         
