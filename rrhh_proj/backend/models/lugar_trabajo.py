@@ -56,5 +56,5 @@ class LugarTrabajo():
     
     #It will be used as a key in the dictionary horarios_dict in show_horarios_por_lugar of class ListaHorario.
     def get_empresa_sucursal_combination(self):
-        return f"{self.get_nombre_empresa() - {self.get_sucursal()}}"
+        return f"{self.get_nombre_empresa()}, {self.get_sucursal()}"
     #endregion

@@ -148,14 +148,14 @@ class Horario():
 
         return horario
 
-    @classmethod
-    def show_data(cls, horario):
-        days = horario.get_dias()
-        days_combined = ", ".join(days)  # Joining days with a comma and a space
+    #@classmethod
+    def show_data(self): #horario
+        #days = horario.get_dias()
+        #days_combined = ", ".join(days)  # Joining days with a comma and a space
         response = {
-            "Dias: ": days_combined,
-            "Desde: ": horario.get_hora_inicio(),
-            "Hasta: ": horario.get_hora_fin()
+            "Dias: ": ", ".join(self.get_dias()) ,
+            "Desde: ": self.get_hora_inicio(),
+            "Hasta: ": self.get_hora_fin()
         }
         json_response = json.dumps(response)
         return json_response
