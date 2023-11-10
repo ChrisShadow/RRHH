@@ -14,15 +14,9 @@ class ListaActividades():
         for actividad in actividades:
             self.lista_actividad[actividad.get_nombre()]=actividad
 
-    """def add_actividad(self, name,level):
-        actividad=Actividades(name,level)
-        self.lista_actividad[name]=actividad"""
-
     def update_actividad(self, name, level):
         if name in self.lista_actividad:
            self.lista_actividad[name].set_nivel(level)
-           """ actividad=self.lista_actividad[name]
-            actividad.set_nivel(level)"""
 
     def remove_actividades(self, *actividades):
         for actividad in actividades:
@@ -30,18 +24,6 @@ class ListaActividades():
                 if instance == actividad:
                     del self.lista_actividad[name]
                     break
-
-    """def remove_actividad(self,*names):
-        for name in names:
-            if name in self.lista_actividad:
-                del self.lista_actividad[name]"""
-
-    """def show_data(self):
-        act_dict={}
-        for actividad in self.lista_actividad:
-            act_dict[actividad.get_nombre()]=actividad.get_nivel()
-        return json.dumps(act_dict)"""
-    
     
     def show_data(self):
         act_dict={}
