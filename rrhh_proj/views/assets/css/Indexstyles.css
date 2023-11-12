@@ -39,6 +39,24 @@ header {
 	letter-spacing: 0;
 }
 
+/*right-menu*/
+.right-menu { 
+	display: flex;
+	justify-content: right;
+	align-items: flex-end;
+}
+
+/* backward-button-right */
+.backward-button-right {
+	display: flex
+}
+
+
+/*notbell-image-right*/
+.notbell-image-right{
+	display: flex;
+}
+
 /* .notbell_image */
 .notbell-image {
 	width: 23px;
@@ -48,6 +66,7 @@ header {
 	top: 25px;
 	background-repeat: no-repeat;
 	background-size: cover;
+	display: flex;
 }
 
 /* .backward_button */
@@ -59,6 +78,7 @@ header {
 	top: 25px;
 	background-repeat: no-repeat;
 	background-size: cover;
+	display: flex;
 }
 
 /* .drop_down_user */
@@ -68,6 +88,7 @@ header {
 	position: absolute;
 	left: 239px;
 	top: 21px;
+	display: flex;
 }
 
 /* .ellipse_user */
@@ -94,11 +115,12 @@ header {
 .tiny-user {
 	width: 32px;
 	height: 29px;
-	position: absolute;
+	position: absolte;
 	left: 0px;
 	top: 0px;
 	background-repeat: no-repeat;
 	background-size: cover;
+	display: flex;
 }
 
 
