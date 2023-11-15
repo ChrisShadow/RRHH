@@ -63,6 +63,7 @@ class Horario():
             unique_dias = ["Lunes(default)"]
 
         self.dias = unique_dias
+        return self
 
     def set_hora_inicio(self, new_starting_hour):
         # Defines a regular expression pattern to validate the time format
@@ -72,7 +73,7 @@ class Horario():
             self.hora_inicio = new_starting_hour
         else:
             # raise ValueError("El formato de la hora no es válido. Debe ser ##:##.")
-            print("El formato de la hora no es válido. Debe ser ##:##.")
+            print("El formato de la hora inicio no es válido. Debe ser ##:##.")
             self.hora_inicio = '08:00(Default)'
         return self
 
@@ -84,7 +85,7 @@ class Horario():
             self.hora_fin = new_leaving_hour
         else:
             # raise ValueError("El formato de la hora no es válido. Debe ser ##:##.")
-            print("El formato de la hora no es válido. Debe ser ##:##.")
+            print("El formato de la hora fin no es válido. Debe ser ##:##.")
             self.hora_fin = '17:00(Default)'
         return self
 
@@ -137,15 +138,15 @@ class Horario():
 
         if not re.match(hora_patron, hora_inicio):
             # raise ValueError("El formato de la hora no es válido. Debe ser ##:##.")
-            print("El formato de la hora no es válido. Debe ser ##:##.")
+            print("El formato de la hora inicio no es válido. Debe ser ##:##.")
             hora_inicio = '08:00(Default)'
 
         if not re.match(hora_patron, hora_fin):
             # raise ValueError("El formato de la hora no es válido. Debe ser ##:##.")
-            print("El formato de la hora no es válido. Debe ser ##:##.")
+            print("El formato de la hora fin no es válido. Debe ser ##:##.")
             hora_fin = '17:00(Default)'
 
-        return dias, hora_inicio.strip(), hora_fin.strip()
+        return unique_dias, hora_inicio.strip(), hora_fin.strip()
 
     @classmethod
     def create_from_string(cls, data_string):
