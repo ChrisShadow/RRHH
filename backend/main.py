@@ -66,8 +66,8 @@ def main():
 
         # Updating
         print(f"\nUpdating {actividad4.get_nombre()}")
-        # new_act=actividad2.set_nivel("Alto")
-        lista_activs.update_actividad("Tarea 5", "Bajo")
+        lista_activs.update_actividad(
+            "Tarea 5", "Variante de la tarea 5", "Bajo")
         data_activs_as_json = lista_activs.show_data()
         print(f"Data as JSON format of ListaActividades\n" +
               f"{data_activs_as_json}")
@@ -182,7 +182,7 @@ def main():
 
         # Adding Actividades
         lista_horarios.add_horario_lugar_trabajo(
-            lugar_trabajo3, [horario2, horario1, horario5])
+            lugar_trabajo3, [horario4, horario3, horario5])
 
         # Showing datas of the list
         data_horarios_as_json = lista_horarios.show_data()
@@ -191,14 +191,13 @@ def main():
 
         # Updating the list
         print(
-            f"\nUpdating {lugar_trabajo3.get_nombre_empresa()} and {horario1.get_dias()}")
+            f"\nUpdating {lugar_trabajo3.get_nombre_empresa()}")
         lugar_trabajo3.set_nombre_empresa("Mbokaja SA")
-        new_horario1_data_string = horario1.set_hora_inicio(
-            "12:00").set_hora_fin("22:00")
-        new_horario1 = Horario()
-        new_horario1.update_from_string(new_horario1_data_string)
         lista_horarios.update_horario_lugar_trabajo(
-            lugar_trabajo3, [new_horario1])
+            lugar_trabajo3, [horario4.set_hora_fin("15:30").set_hora_inicio("07:00"), horario3.set_dias("Sabado,Martes,Martes,Lunes,Voernes"), horario5.set_hora_inicio("21:59").set_hora_fin("23:00")])
+        data_horarios_as_json = lista_horarios.show_data()
+        print(f"Data as JSON format of ListaHorarios\n" +
+              f"{data_horarios_as_json}")
 
         # endregion
 

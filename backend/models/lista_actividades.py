@@ -14,9 +14,21 @@ class ListaActividades():
         for actividad in actividades:
             self.lista_actividad[actividad.get_nombre()] = actividad
 
-    def update_actividad(self, name, level):
-        if name in self.lista_actividad:
-            self.lista_actividad[name].set_nivel(level)
+    def update_actividad(self, old_name, new_name, level):
+        if old_name in self.lista_actividad:
+            # Getting the old instance of Actividad
+            actividad = self.lista_actividad[old_name]
+
+            # Updating de new values
+            actividad.set_nombre(new_name)
+            actividad.set_nivel(level)
+
+            # If the name has changed, setting the key in the dict
+            if old_name != new_name:
+                del self.lista_actividad[old_name]
+                self.lista_actividad[new_name] = actividad
+        else:
+            print(f"No se encontró la actividad con el nombre {old_name}")
 
     def remove_actividades(self, *actividades):
         for actividad in actividades:

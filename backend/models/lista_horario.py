@@ -30,8 +30,9 @@ class ListaHorario():
     def update_horario_lugar_trabajo(self, lugar_trabajo, new_horarios):
         if lugar_trabajo in self.lista_horario:
             # Replacing the new ones
-            self.lista_horario[lugar_trabajo][lugar_trabajo] = new_horarios
-            print(f"Horario actualizado para {lugar_trabajo}")
+            self.lista_horario[lugar_trabajo] = new_horarios
+            print(
+                f"Horario actualizado a {lugar_trabajo.get_empresa_sucursal_combination()}")
         else:
             print(
                 f"No se encontró el lugar de trabajo o el horario antiguo para {lugar_trabajo}")
