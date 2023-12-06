@@ -199,6 +199,15 @@ def main():
         print(f"Data as JSON format of ListaHorarios\n" +
               f"{data_horarios_as_json}")
 
+        # Deleting Horarios from de collection
+        print(
+            f"\nDeleting horarios of {lugar_trabajo3.get_nombre_empresa()} from the collection")
+        lista_horarios.remove_horarios_lugar_trabajo(
+            lugar_trabajo3, horario3, horario4, horario5)
+        data_horarios_as_json = lista_horarios.show_data()
+        print(f"Data as JSON format of ListaHorarios\n" +
+              f"{data_horarios_as_json}")
+
         # endregion
 
     except ValueError as e:

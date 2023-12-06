@@ -41,11 +41,21 @@ class ListaHorario():
     It removes a specific Horario from a LugarTrabajo and also removes LugarTrabajo if it no longer has associated Horarios.
     """
 
-    def remove_horario_lugar_trabajo(self, lugar_trabajo, horario):
-        if lugar_trabajo in self.lista_horario and horario in self._listaHorario[lugar_trabajo]:
-            self.lista_horario[lugar_trabajo].remove(horario)
-            if not self.lista_horario[lugar_trabajo]:
-                del self.lista_horario[lugar_trabajo]
+    def remove_horarios_lugar_trabajo(self, lugar_trabajo, *horarios):
+        if lugar_trabajo in self.lista_horario:
+            # List of horarios added to lugar_trabajo
+            horarios_lugar = self.lista_horario[lugar_trabajo]
+
+            # Deleting those horarios
+            for horario in horarios:
+                if horario in horarios_lugar:
+                    horarios_lugar.remove(horario)
+
+            # In case of zero horarios, then the lugar_trabajo
+            """if not horarios_lugar:
+                del self.lista_horario[lugar_trabajo]"""
+        else:
+            print(f"No se encontró el lugar de trabajo {lugar_trabajo}")
 
     # show_horarios_por_lugar
     """

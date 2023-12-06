@@ -32,10 +32,14 @@ class ListaActividades():
 
     def remove_actividades(self, *actividades):
         for actividad in actividades:
-            for name, instance in list(self.lista_actividad.items()):
-                if instance == actividad:
-                    del self.lista_actividad[name]
-                    break
+            # Before deleting
+            if actividad in self.lista_actividad.values():
+                for name, instance in list(self.lista_actividad.items()):
+                    if instance == actividad:
+                        del self.lista_actividad[name]
+                        break
+            else:
+                print(f"No se encontró la actividad {actividad}")
 
     def show_data(self):
         act_dict = {}
