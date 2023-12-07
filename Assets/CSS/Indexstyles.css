@@ -24,7 +24,7 @@ nav {
 nav .header {
   position: relative;
   max-width: 1600px;
-  padding: 0px 30px;
+  padding: 0px 90px;
   height: 70px;
   line-height: 70px;
   margin: auto;
@@ -43,7 +43,7 @@ h1 {
 
 /* Nav list */
 
-.fa,fas {
+.fa, .fas {
   font-weight: 900;
   font-family: "Font Awesome 5 Free";
   -webkit-font-smoothing: antialiased;
@@ -76,12 +76,17 @@ h1 {
   border-radius: 5px;
   transition: all 0.3s ease;
 }
+.nav-links .back-item,
+.nav-links .notbell-item,
 .nav-links .mobile-item {
   display: none;
 }
 .nav-links .drop-menu {
   position: absolute;
-  background: #a874bd;
+  background: rgba(130.0000074505806,
+      114.0000008046627,
+      146.00000649690628,
+      0.8799999952316284);
   width: 180px;
   line-height: 45px;
   top: 85px;
@@ -91,11 +96,11 @@ h1 {
 }
 .nav-links li:hover .drop-menu {
   transition: all 0.3s ease;
-  margin: 0 0 0 -75px;
+  /* margin: 0 0 0 -75px; */
   top: 70px;
   opacity: 1;
   visibility: visible;
-  background-color: rgba(142, 100, 180, 0.21);
+  /* background-color: rgba(142, 100, 180, 0.21); */
 }
 .drop-menu li a {
   width: 100%;
@@ -104,11 +109,9 @@ h1 {
   font-weight: 400;
   border-radius: 0px;
 }
-
 .drop-menu li a:hover {
   background-color: rgb(156, 199, 211);
 }
-
 .header .btn {
   color: #fff;
   font-size: 20px;
@@ -125,11 +128,9 @@ h1 {
   #close-btn:checked ~ .btn.menu-btn {
     display: block;
   }
-
   .header .btn {
     display: block;
   }
-
   .header .nav-links {
     position: fixed;
     height: 100vh;
@@ -156,7 +157,6 @@ h1 {
   ::-webkit-scrollbar-thumb {
     background: #3a3b3c;
   }
-
   #menu-btn:checked ~ .nav-links {
     left: 0%;
   }
@@ -190,9 +190,13 @@ h1 {
   #showDrop:checked ~ .drop-menu {
     max-height: 100%;
   }
+  .nav-links .desktop-item-back,
+  .nav-links .desktop-item-notbell,
   .nav-links .desktop-item {
     display: none;
   }
+  .nav-links .back-item,
+  .nav-links .notbell-item,
   .nav-links .mobile-item {
     display: block;
     color: #f2f2f2;
@@ -203,10 +207,11 @@ h1 {
     border-radius: 5px;
     transition: all 0.3s ease;
   }
+  .nav-links .back-item:hover,
+  .nav-links .notbell-item:hover,
   .nav-links .mobile-item:hover {
     background: #3a3b3c;
   }
-
   .drop-menu li {
     margin: 0;
   }
