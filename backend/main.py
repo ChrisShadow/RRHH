@@ -3,9 +3,8 @@ from models.lista_actividades import ListaActividades
 from models.lista_horario import ListaHorario
 from models.lugar_trabajo import LugarTrabajo
 from models.horario import Horario
-"""from models.cargo import Cargo
 from models.divisa import Divisa
-"""
+# from models.cargo import Cargo
 
 
 def main():
@@ -207,6 +206,44 @@ def main():
         data_horarios_as_json = lista_horarios.show_data()
         print(f"Data as JSON format of ListaHorarios\n" +
               f"{data_horarios_as_json}")
+
+        # endregion
+
+        # region Divisa
+        divisa1_data_string = "$,Dolar americano,1000"
+        divisa1 = Divisa.create_from_string(divisa1_data_string)
+        print(f"\nRegion Divisas\nProbando con {divisa1.get_descripcion_moneda()}\n" +
+              f"Simbolo:{divisa1.get_simbolo()}\n" +
+              f"Valor:{divisa1.get_valor_mostrar()}\n")
+
+        # Display the instance data as a JSON string
+        data_div1_as_json = Divisa.show_data(divisa1)
+        print(f"Divisa 1" +
+              f"\nData as JSON format of {divisa1.get_descripcion_moneda()}\n" +
+              f"{data_div1_as_json}\n")
+
+        # Change instance attributes
+        divisa1.set_simbolo("USD")
+        divisa1.set_descripcion_moneda("Dólares")
+
+        divisa2_data_string = "Gs,Guaranies,4000000"
+        divisa2 = Divisa.create_from_string(divisa2_data_string)
+
+        divisa3_data_string = "$ARG,Pesos dolarizados,140000"
+        divisa3 = Divisa.create_from_string(divisa3_data_string)
+
+        # Datas of the updated activ1 instance with the second one
+        print(f"\nModified data as {divisa1.get_descripcion_moneda()}\n" +
+              f"Simbolo:{divisa1.get_simbolo()}\n" +
+              f"Valor:{divisa1.get_valor_mostrar()}\n" +
+              f"\nDivisa 2\n" +
+              f"Simbolo:{divisa2.get_simbolo()}\n" +
+              f"Valor:{divisa2.get_valor_mostrar()}\n" +
+              f"Descripción:{divisa2.get_descripcion_moneda()}\n" +
+              f"\nDivisa 3\n" +
+              f"Simbolo:{divisa3.get_simbolo()}\n" +
+              f"Valor:{divisa3.get_valor_mostrar()}\n" +
+              f"Descripción:{divisa3.get_descripcion_moneda()}\n")
 
         # endregion
 

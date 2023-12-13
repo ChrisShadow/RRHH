@@ -7,7 +7,13 @@ class Divisa():
         self.simbolo = simbolo
         self.descripcion_moneda = descripcion_moneda
         self.valor = valor
-        self.valor_mostrar = valor_mostrar  # It will update in the setter
+        # self.valor_mostrar = valor_mostrar  # It will update in the setter
+
+        if valor_mostrar is None:
+            self.set_valor_mostrar(simbolo, valor)
+        else:
+            self.valor_mostrar = valor_mostrar
+
     # endregion
 
     # region getter
@@ -46,14 +52,14 @@ class Divisa():
 
     @classmethod
     def create_from_string(cls, data_string):
-        simbolo, descripcion_moneda, valor, valor_mostrar = data_string.split(
+        simbolo, descripcion_moneda, valor, = data_string.split(
             ",")
-        return cls(simbolo.strip(), descripcion_moneda.strip(), valor.strip(), valor_mostrar.strip())
+        return cls(simbolo.strip(), descripcion_moneda.strip(), float(valor.strip()))
 
     @classmethod
     def show_data(cls, divisa):
         response = {
-            "Descripción: ": divisa.get_descripcion_moneda(),
+            "Descripcion: ": divisa.get_descripcion_moneda(),
             "Monto: ": divisa.get_valor_mostrar()
         }
         json_response = json.dumps(response)
