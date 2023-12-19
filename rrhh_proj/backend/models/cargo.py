@@ -1,6 +1,6 @@
-from divisa import Divisa
-from lista_actividades import ListaActividades
-from lista_horario import ListaHorario
+from models.divisa import Divisa
+from models.lista_actividades import ListaActividades
+from models.lista_horario import ListaHorario
 """ from rela_v_abajo import RelacionVAbajo
 from rela_v_arriba import RelacionVArriba
 from relacion_Horiz import RelacionHorizontal """
@@ -8,10 +8,9 @@ from relacion_Horiz import RelacionHorizontal """
 import json
 
 
+# region Doc
 
-#region Doc
-
-#Some definitions
+# Some definitions
 """Class->a template.
 Attribute->A variable within a class.
 Method->A function within a class.
@@ -19,13 +18,13 @@ Object->A particular instance of a class.
 Constructor->Code that runs when an object is created.
 Inheritance->The ability to extend a class to make a new class."""
 
-#Fundamental elements
+# Fundamental elements
 """Inheritance: Adoption of properties from the parent class into the child class.
 Polymorphism: Creation of many forms from one form.
 Abstraction: Displaying the necessary data and hiding unnecessary data.
 Encapsulation: Securing the info of the class."""
 
-#Classes in Python 
+# Classes in Python
 """They are created with the keyword class, followed by the name of the class. Class attributes are defined after the class- 
 -name, and they are shared by all instances of the class. Individual instance attributes are defined after the class attributes, and-
 -they are unique to each instance. Method definitions are also placed after the class definition. Methods are functions that are-
@@ -41,15 +40,15 @@ Basic Decorations: @classmethod, @staticmethod
 Classes inside another classes: Inner Classes
 Functions inside another functions: nested methods"""
 
-#Class attributes:
+# Class attributes:
 """If attributes are constant and do not change between different instances of the Cargo class, it is appropriate to define them as class attributes.
 They are shared between all instances of the class, which can save memory and avoid redundancy if the values are the same for all instances."""
 
-#Instance attributes:
+# Instance attributes:
 """If attributes are specific to each instance of the Cargo class and can change from one instance to another, they must be defined as instance attributes.
 They are initialised when a new instance of the class is created and belong exclusively to that instance."""
 
-#Resources
+# Resources
 """classes on Python: https://docs.python.org/3/tutorial/classes.html"
 https://youtu.be/LwFnF9XoEfM
 https://realpython.com/lessons/managing-class-attributes/
@@ -61,136 +60,154 @@ Public and private classes: https://youtu.be/xY__sjI5yVU
 Public and Private members: https://youtu.be/js9EITv4HqM
 Passign members from one class to another one: https://youtu.be/iDc_VrawjqY"""
 
-#endregion
+# endregion
 
 
 class Cargo():
     "static variables: those which are not from other classes"
-    #region class attibutes
-    TIPOFUNCIONARIO={1:'Asalariado',2:'Tercerizado'}
-    PERIODOPAGO={1:'Jornal',2:'Semanal',3:'Quincenal',4:'Mensual'}
-    #endregion
+    # region class attibutes
+    TIPOFUNCIONARIO = {1: 'Asalariado', 2: 'Tercerizado'}
+    PERIODOPAGO = {1: 'Jornal', 2: 'Semanal', 3: 'Quincenal', 4: 'Mensual'}
+    # endregion
 
     """Constructor lets the class initialize the object's attributes and serves no other purpose"""
-    #region constructor
-    def __init__(self,name,lista_actividad,lista_horario,divisa,indice_tipo_funcionario,pago_funcionario,porcentaje_comision,
-                 indice_periodo_pago):
-        self.name=name
-        self._lista_actividad=lista_actividad # as a parameter of assigned instance of lista_actividad #ListaActividades() as created instance for each Cargos' instance
-        self._lista_horario=lista_horario  #  #ListaHorario()
-        self._divisa=divisa #  #Divisa
-        self.indice_tipo_funcionario=indice_tipo_funcionario
-        self.pago_funcionario=pago_funcionario
-        self.porcentaje_comision=porcentaje_comision
-        self.indice_periodo_pago=indice_periodo_pago
+    # region constructor
 
-        #Vertical relationships (top and bottom)
-        self._relacion_v_arriba=[] #as an empty list
-        self._relacion_v_abajo=[] #as an empty list
-        #Horizontaal relationships (positions at the same level)
-        self._relacion_horizontal=[] #as an empty list
-    #endregion
+    def __init__(self, name, lista_actividad, lista_horario, divisa, indice_tipo_funcionario, pago_funcionario, porcentaje_comision,
+                 indice_periodo_pago):
+        self.name = name
+        # as a parameter of assigned instance of lista_actividad #ListaActividades() as created instance for each Cargos' instance
+        self._lista_actividad = lista_actividad
+        self._lista_horario = lista_horario  # ListaHorario()
+        self._divisa = divisa  # Divisa
+        self.check_indice_tipo_funcionario(indice_tipo_funcionario)
+        self.indice_tipo_funcionario = indice_tipo_funcionario
+        self.pago_funcionario = pago_funcionario
+        self.porcentaje_comision = porcentaje_comision
+        self.check_indice_periodo_pago(indice_periodo_pago)
+        self.indice_periodo_pago = indice_periodo_pago
+
+        # Vertical relationships (top and bottom)
+        self._relacion_v_arriba = []  # as an empty list
+        self._relacion_v_abajo = []  # as an empty list
+        # Horizontaal relationships (positions at the same level)
+        self._relacion_horizontal = []  # as an empty list
+    # endregion
 
     "All get functions retrieve the instance attributes, individually"
-    #region getter
+    # region getter
+
     def get_name(self):
         return self.name
-    
-    #show_data displays the attributes of the accessed class
+
+    # show_data displays the attributes of the accessed class
     def get_lista_actividad(self):
         return ListaActividades.show_data(self._lista_actividad)
-    
+
     def get_lista_horario(self):
         return ListaHorario.show_data(self._lista_horario)
-    
+
     def get_divisa(self):
         return Divisa.show_data(self._divisa)
-    
+
     def get_pago_funcionario(self):
         return self.pago_funcionario
-    
+
     def get_porcentaje_comision(self):
         return self.porcentaje_comision
 
     "Additional method to get the indexes and then access the values in the tipo_funcionario dictionary"
+
     def get_indice_tipo_funcionario(self):
         return self.indice_tipo_funcionario
 
     "Here if the indices change, the values you obtain using get_indice_tipo_funcionario() will also change automatically."
+
     def get_tipo_funcionario(self):
         return Cargo.TIPOFUNCIONARIO[self.get_indice_tipo_funcionario()]
-    
+
     def get_indice_periodo_pago(self):
         return self.indice_periodo_pago
 
     def get_periodo_pago(self):
         return Cargo.PERIODOPAGO[self.get_indice_periodo_pago()]
-    
+
     """For obtaining the relations"""
+
     def get_relacion_v_arriba(self):
-        return self._relacion_v_arriba
-    
+        return [cargo.get_name() for cargo in self._relacion_v_arriba]
+
     def get_relacion_v_abajo(self):
-        return self._relacion_v_abajo
-    
+        return [cargo.get_name() for cargo in self._relacion_v_abajo]
+
     def get_relacion_horizontal(self):
-        return self._relacion_horizontal
-    
-    #endregion
+        return [cargo.get_name() for cargo in self._relacion_horizontal]
+
+    # endregion
 
     "All set functions enable to change of the values of those attributes,individually"
-    #region setter
+    # region setter
+
     def set_name(self, new_name):
-        self.name=new_name
-    
-    def set_relacion_v_arriba(self,new_relacion_v_arriba):
-        self._relacion_v_arriba=new_relacion_v_arriba
+        self.name = new_name
 
-    def set_relacion_v_abajo(self,new_relacion_v_abajo):
-        self._relacion_v_abajo=new_relacion_v_abajo
+    def set_relacion_v_arriba(self, new_relacion_v_arriba):
+        self._relacion_v_arriba = new_relacion_v_arriba
 
-    def set_relacion_horizontal(self,new_relacion_horizontal):
-        self._relacion_horizontal=new_relacion_horizontal
+    def set_relacion_v_abajo(self, new_relacion_v_abajo):
+        self._relacion_v_abajo = new_relacion_v_abajo
 
-    def set_lista_actividad(self,new_lista_actividad):
-        self._lista_actividad=new_lista_actividad
+    def set_relacion_horizontal(self, new_relacion_horizontal):
+        self._relacion_horizontal = new_relacion_horizontal
 
-    def set_lista_horario(self,new_lista_horario):
-        self._lista_horario=new_lista_horario
+    def set_lista_actividad(self, new_lista_actividad):
+        self._lista_actividad = new_lista_actividad
 
-    def set_divisa(self,new_divisa):
-        self._divisa=new_divisa
-    
+    def set_lista_horario(self, new_lista_horario):
+        self._lista_horario = new_lista_horario
+
+    def set_divisa(self, new_divisa):
+        self._divisa = new_divisa
+
     def set_pago_funcionario(self, new_pago_funcionario):
-        self.pago_funcionario=new_pago_funcionario
-    
-    def set_porcentaje_comision(self,new_porcentaje_comision):
-        self.porcentaje_comision=new_porcentaje_comision
-    
-    def set_indice_tipo_funcionario(self,new_indice_tipo_funcionario):
-        self.indice_tipo_funcionario=new_indice_tipo_funcionario
+        self.pago_funcionario = new_pago_funcionario
+
+    def set_porcentaje_comision(self, new_porcentaje_comision):
+        self.porcentaje_comision = new_porcentaje_comision
+
+    def set_indice_tipo_funcionario(self, new_indice_tipo_funcionario):
+        self.check_indice_tipo_funcionario(new_indice_tipo_funcionario)
+        self.indice_tipo_funcionario = new_indice_tipo_funcionario
 
     "It is not required because changes won't be necessary in the dict"
-    #def set_tipo_funcionario(self,new_tipo_funcionario):
+    # def set_tipo_funcionario(self,new_tipo_funcionario):
     #    for key, value in self.tipo_funcionario.items():
     #        if value==new_tipo_funcionario:
     #            self.indice_tipo_funcionario=key
     #            break
-    
-    def set_indice_periodo_pago(self,new_indice_periodo_pago):
-        self.indice_periodo_pago=new_indice_periodo_pago
 
-    #def set_indice_periodo_pago(self,new_indice_periodo_pago):
+    def set_indice_periodo_pago(self, new_indice_periodo_pago):
+        self.check_indice_periodo_pago(new_indice_periodo_pago)
+        self.indice_periodo_pago = new_indice_periodo_pago
+
+    # def set_indice_periodo_pago(self,new_indice_periodo_pago):
     #    for key, value in self.indice_periodo_pago.items():
     #        if value==new_indice_periodo_pago:
     #            self.indice_periodo_pago=key
     #            break
 
-    
-    
-    #endregion
+    # endregion
 
-   #region class methods
+   # region class methods
+
+    def check_indice_tipo_funcionario(self, indice_tipo_funcionario):
+        if indice_tipo_funcionario not in self.TIPOFUNCIONARIO:
+            print("Índice de tipo de funcionario no válido.")
+
+    def check_indice_periodo_pago(self, indice_periodo_pago):
+        if indice_periodo_pago not in self.PERIODOPAGO:
+            print("Índice de periodo de pago no válido.")
+
     """Here, the dictionary tipo_funcionario is obtained directly using the class name, Cargo."
     Class-exclusive method, since tipo_funcionario is of class type. The same with periodo_pago"""
     @classmethod
@@ -200,55 +217,68 @@ class Cargo():
     @classmethod
     def get_periodo_pago_dict(cls):
         return cls.PERIODOPAGO
-    
-    #Methods for adding charges to relationships
-    def add_relacion_v_arriba(self,cargo):
+
+    # Methods for adding charges to relationships
+    def add_relacion_v_arriba(self, cargo):
         self._relacion_v_arriba.append(cargo)
 
-    def add_relacion_v_abajo(self,cargo):
+    def add_relacion_v_abajo(self, cargo):
         self._relacion_v_abajo.append(cargo)
 
-    def add_relacion_horizontal(self,cargo):
+    def add_relacion_horizontal(self, cargo):
         self._relacion_horizontal.append(cargo)
 
-    #Methods to remove charges from relationships
-    def delete_relacion_v_arriba(self,cargo):
+    # Methods to remove charges from relationships
+    def delete_relacion_v_arriba(self, cargo):
         if cargo in self._relacion_v_arriba:
-            self._relacion_v_arriba.remove(cargo)     
-    
-    def delete_relacion_v_abajo(self,cargo):
-        if cargo in self._relacion_v_abajo:
-            self._relacion_v_abajo.remove(cargo)  
+            self._relacion_v_arriba.remove(cargo)
 
-    def delete_relacion_horizonta(self,cargo):
+    def delete_relacion_v_abajo(self, cargo):
+        if cargo in self._relacion_v_abajo:
+            self._relacion_v_abajo.remove(cargo)
+
+    def delete_relacion_horizonta(self, cargo):
         if cargo in self._relacion_horizontal:
-            self._relacion_horizontal.remove(cargo)  
+            self._relacion_horizontal.remove(cargo)
 
     "Display the data as a whole transformed as a json object in order send to the view as a json object."
-    def show_data(self):
-        
+
+    def to_dict(self):
+        divisa_info = Divisa.show_data(self._divisa)
+        divisa_data = json.loads(divisa_info)
+
         "In order to determine: Tipo de funcionario y remuneración"
-        tipo_funcionario=(f"Tipo funcionario: {self.get_tipo_funcionario()} " + 
-                          f"Salario: {self.get_pago_funcionario()}" if self.indice_tipo_funcionario==1 
-                          else f"Tipo funcionario: {self.get_tipo_funcionario()} " + 
-                          f"Viático: {self.get_pago_funcionario()}"
-                          )
-        
+        tipo_funcionario = (f"{self.get_tipo_funcionario()}/" +
+                            f"Salario: {self.get_pago_funcionario():,.2f}" if self.get_indice_tipo_funcionario() == 1
+                            else f"{self.get_tipo_funcionario()}/" +
+                            f"Viático: {self.get_pago_funcionario():,.2f}"
+                            )
+        monto_total = ((self.get_pago_funcionario(
+        )*self.get_porcentaje_comision())/100)+self.get_pago_funcionario()
+        pago_funcionario_info = (
+            f"{divisa_data['Simbolo: ']}{monto_total:,.0f}"
+            if divisa_data["Descripcion: "] in ["Guarani", "Guaranies"]
+            else f"{divisa_data['Simbolo: ']}{monto_total:,.2f}"
+        )
+
         "The response will be a tuple containing the dictionary as the first element and the JSON string as the second element."
-        response= {
+        return {
             "Nombre del cargo: ": self.get_name(),
-            "Relación vertical arriba: ": self.get_relacion_v_arriba(), 
+            "Relación vertical arriba: ": self.get_relacion_v_arriba(),
             "Relación vertical abajo: ": self.get_relacion_v_abajo(),
             "Relación horizontal: ": self.get_relacion_horizontal(),
-            "Lista de actividades: ":self.get_lista_actividad(),
-            "Lista de horario: ": self.get_lista_horario(),
-            "Tipo de funcionario y remuneración: ":tipo_funcionario,
+            "Lista de actividades(Nombre y prioridad): ": self.get_lista_actividad(),
+            "Lista de horario(Lugar y días más horas): ": self.get_lista_horario(),
+            "Tipo de funcionario y remuneración: ": tipo_funcionario,
             "Porcentaje Comisión: ": self.get_porcentaje_comision(),
-            "Moneda: ": self.get_divisa(),
-            "Período Pago: ": self.get_periodo_pago()
-            }
+            "Moneda: ":  divisa_data["Descripcion: "],
+            "Período Pago: ": self.get_periodo_pago(),
+            "Monto Pago Funcionario: ": pago_funcionario_info
+        }
 
+    def show_data(self):
+        data_dict = self.to_dict()
         "dumps() of the json module takes the dictionary as input and returns a text string in JSON format"
-        json_response=json.dumps(response)
+        json_response = json.dumps(data_dict)
         return json_response
-   #endregion
+   # endregion

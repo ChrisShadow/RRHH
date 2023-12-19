@@ -4,7 +4,7 @@ from models.lista_horario import ListaHorario
 from models.lugar_trabajo import LugarTrabajo
 from models.horario import Horario
 from models.divisa import Divisa
-# from models.cargo import Cargo
+from models.cargo import Cargo
 
 
 def main():
@@ -53,10 +53,13 @@ def main():
         # region Lista Actividades
         # Creating an instance of it
         lista_activs = ListaActividades()
+        lista_activs2 = ListaActividades()
 
         # Adding Actividades
         lista_activs.add_actividad(
             actividad1, actividad2, actividad3, actividad4, actividad5)
+        lista_activs2.add_actividad(
+            actividad3, actividad1)
 
         # Showing datas of the list
         data_activs_as_json = lista_activs.show_data()
@@ -178,10 +181,13 @@ def main():
         # region ListaHorario
         # Creating an instance of it
         lista_horarios = ListaHorario()
+        lista_horarios2 = ListaHorario()
 
         # Adding Actividades
         lista_horarios.add_horario_lugar_trabajo(
             lugar_trabajo3, [horario4, horario3, horario5])
+        lista_horarios2.add_horario_lugar_trabajo(
+            lugar_trabajo5, [horario1, horario4, horario3])
 
         # Showing datas of the list
         data_horarios_as_json = lista_horarios.show_data()
@@ -244,6 +250,40 @@ def main():
               f"Simbolo:{divisa3.get_simbolo()}\n" +
               f"Valor:{divisa3.get_valor_mostrar()}\n" +
               f"Descripción:{divisa3.get_descripcion_moneda()}\n")
+
+        # endregion
+
+        # region Cargo
+        cargo_programador = Cargo(
+            name="Programador intermediate",
+            lista_actividad=lista_activs,
+            lista_horario=lista_horarios,
+            divisa=divisa3,
+            indice_tipo_funcionario=2,
+            pago_funcionario=200000,
+            porcentaje_comision=4.5,
+            indice_periodo_pago=2
+        )
+        cargo_programador_expert = Cargo(
+            name="Full stack",
+            lista_actividad=lista_activs2,
+            lista_horario=lista_horarios2,
+            divisa=divisa2,
+            indice_tipo_funcionario=1,
+            pago_funcionario=9500000,
+            porcentaje_comision=7.5,
+            indice_periodo_pago=4
+        )
+        cargo_programador.add_relacion_v_arriba(cargo_programador_expert)
+        cargo_programador_expert.add_relacion_v_abajo(cargo_programador)
+
+        cargos = [cargo_programador, cargo_programador_expert]
+        print("\nRegion Cargos")
+        for cargo in cargos:
+            data_dict = cargo.to_dict()
+            print("\n")
+            for key, value in data_dict.items():
+                print(f"{key}: {value}")
 
         # endregion
 
