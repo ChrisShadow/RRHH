@@ -59,6 +59,7 @@ class Divisa():
     @classmethod
     def show_data(cls, divisa):
         response = {
+            "Simbolo: ": divisa.get_simbolo(),
             "Descripcion: ": divisa.get_descripcion_moneda(),
             "Monto: ": divisa.get_valor_mostrar()
         }
