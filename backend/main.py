@@ -274,8 +274,22 @@ def main():
             porcentaje_comision=7.5,
             indice_periodo_pago=4
         )
+
+        print("\nAdding relations between cargos\n")
         cargo_programador.add_relacion_v_arriba(cargo_programador_expert)
         cargo_programador_expert.add_relacion_v_abajo(cargo_programador)
+
+        cargos = [cargo_programador, cargo_programador_expert]
+        print("\nRegion Cargos")
+        for cargo in cargos:
+            data_dict = cargo.to_dict()
+            print("\n")
+            for key, value in data_dict.items():
+                print(f"{key}: {value}")
+
+        print("\nRemoving relations between instances\n")
+        cargo_programador.delete_relacion_v_arriba(cargo_programador_expert)
+        cargo_programador_expert.delete_relacion_v_abajo(cargo_programador)
 
         cargos = [cargo_programador, cargo_programador_expert]
         print("\nRegion Cargos")

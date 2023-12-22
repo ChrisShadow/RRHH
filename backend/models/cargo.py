@@ -1,9 +1,6 @@
 from models.divisa import Divisa
 from models.lista_actividades import ListaActividades
 from models.lista_horario import ListaHorario
-""" from rela_v_abajo import RelacionVAbajo
-from rela_v_arriba import RelacionVArriba
-from relacion_Horiz import RelacionHorizontal """
 
 import json
 
@@ -64,14 +61,20 @@ Passign members from one class to another one: https://youtu.be/iDc_VrawjqY"""
 
 
 class Cargo():
-    "static variables: those which are not from other classes"
     # region class attibutes
+    """This defines two dictionaries, TIPOFUNCIONARIO and PERIODOPAGO, 
+    which map integer keys to string values representing types of 
+    employees and pay periods, respectively."""
+
     TIPOFUNCIONARIO = {1: 'Asalariado', 2: 'Tercerizado'}
     PERIODOPAGO = {1: 'Jornal', 2: 'Semanal', 3: 'Quincenal', 4: 'Mensual'}
     # endregion
 
-    """Constructor lets the class initialize the object's attributes and serves no other purpose"""
     # region constructor
+    """The code defines a class called "Cargo" with an initializer that takes 
+    several parameters. It initializes various attributes of the class and also 
+    checks the validity of some input values. The class has vertical and 
+    horizontal relationship attributes represented as lists."""
 
     def __init__(self, name, lista_actividad, lista_horario, divisa, indice_tipo_funcionario, pago_funcionario, porcentaje_comision,
                  indice_periodo_pago):
@@ -94,8 +97,12 @@ class Cargo():
         self._relacion_horizontal = []  # as an empty list
     # endregion
 
-    "All get functions retrieve the instance attributes, individually"
     # region getter
+    """It defines a class called "Cargo" with various methods to retrieve 
+    different attributes and relationships associated with a cargo. 
+    The methods allow access to the cargo's name, list of activities, 
+    list of schedules, currency, payment for employees, commission percentage, 
+    type of employee, payment period, and relationships with other cargos."""
 
     def get_name(self):
         return self.name
@@ -145,8 +152,14 @@ class Cargo():
 
     # endregion
 
-    "All set functions enable to change of the values of those attributes,individually"
     # region setter
+    """IT defines a class named "cargo" and includes several setter methods 
+    to set various attributes of the cargo object. These attributes include name, 
+    vertical relationships (above and below), horizontal relationship, 
+    activity list, schedule list, currency, payment for the employee, 
+    commission percentage, type of employee index, and payment period index. 
+    It also includes commented out setter methods that are not required 
+    due to the absence of necessary changes in the dictionary."""
 
     def set_name(self, new_name):
         self.name = new_name
@@ -179,16 +192,16 @@ class Cargo():
         self.check_indice_tipo_funcionario(new_indice_tipo_funcionario)
         self.indice_tipo_funcionario = new_indice_tipo_funcionario
 
+    def set_indice_periodo_pago(self, new_indice_periodo_pago):
+        self.check_indice_periodo_pago(new_indice_periodo_pago)
+        self.indice_periodo_pago = new_indice_periodo_pago
+
     "It is not required because changes won't be necessary in the dict"
     # def set_tipo_funcionario(self,new_tipo_funcionario):
     #    for key, value in self.tipo_funcionario.items():
     #        if value==new_tipo_funcionario:
     #            self.indice_tipo_funcionario=key
     #            break
-
-    def set_indice_periodo_pago(self, new_indice_periodo_pago):
-        self.check_indice_periodo_pago(new_indice_periodo_pago)
-        self.indice_periodo_pago = new_indice_periodo_pago
 
     # def set_indice_periodo_pago(self,new_indice_periodo_pago):
     #    for key, value in self.indice_periodo_pago.items():
@@ -199,17 +212,28 @@ class Cargo():
     # endregion
 
    # region class methods
+    """It defines a function called  check_indice_tipo_funcionario  which takes 
+    two parameters:  self  and  indice_tipo_funcionario . It checks if the  
+    indice_tipo_funcionario  is a valid index in the  TIPOFUNCIONARIO  list. 
+    If it is not valid, it prints a message indicating that the index is invalid."""
 
     def check_indice_tipo_funcionario(self, indice_tipo_funcionario):
         if indice_tipo_funcionario not in self.TIPOFUNCIONARIO:
             print("Índice de tipo de funcionario no válido.")
 
+    """It defines a function called  check_indice_periodo_pago  which takes 
+    two parameters:  self  and  indice_periodo_pago . It checks if the  
+    indice_periodo_pago  is a valid index in the  PERIODOPAGO  list. 
+    If it is not valid, it prints a message indicating that the index is invalid."""
+
     def check_indice_periodo_pago(self, indice_periodo_pago):
         if indice_periodo_pago not in self.PERIODOPAGO:
             print("Índice de periodo de pago no válido.")
 
-    """Here, the dictionary tipo_funcionario is obtained directly using the class name, Cargo."
-    Class-exclusive method, since tipo_funcionario is of class type. The same with periodo_pago"""
+    """The code defines a class named "cargo" with two class methods. 
+    The first method, "get_tipo_funcionario_dict", returns a dictionary called 
+    "TIPOFUNCIONARIO". The second method, "get_periodo_pago_dict", returns 
+    a dictionary called "PERIODOPAGO"."""
     @classmethod
     def get_tipo_funcionario_dict(cls):
         return cls.TIPOFUNCIONARIO
@@ -241,7 +265,14 @@ class Cargo():
         if cargo in self._relacion_horizontal:
             self._relacion_horizontal.remove(cargo)
 
-    "Display the data as a whole transformed as a json object in order send to the view as a json object."
+    """This defines a method called "to_dict" within a class. The method converts 
+    the object's attributes into a dictionary and returns it, along with additional 
+    information, such as the type of employee and their remuneration. 
+    The method also calculates the total payment amount and formats it based on 
+    the currency. The returned dictionary contains various details about 
+    the cargo (position) such as name, vertical and horizontal relationships, 
+    activity list, schedule list, commission percentage, currency, payment period, 
+    and payment amount."""
 
     def to_dict(self):
         divisa_info = Divisa.show_data(self._divisa)
@@ -275,6 +306,9 @@ class Cargo():
             "Período Pago: ": self.get_periodo_pago(),
             "Monto Pago Funcionario: ": pago_funcionario_info
         }
+
+    """It defines a method called show_data that converts a dictionary into 
+    a JSON string using the json.dumps() function."""
 
     def show_data(self):
         data_dict = self.to_dict()
