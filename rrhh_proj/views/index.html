@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Html Generated</title>
-  <meta name="description" content="RRHH" />
+  <title>RRHH Proinso</title>
+  <meta name="description" content="RRHH Proinso" />
   <meta name="author" content="htmlGenerator" />
   <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
 
@@ -27,18 +27,22 @@
    -->
 
 <body>
+  <!-- Navbar -->
   <nav>
+    <!-- Header -->
     <div class="header">
+      <!-- RRHH -->
       <div class="recursos-humanos">
         <a href="#">
-          <h1>RRHH Proinso S.A </h1>
+          <h1>RRHH Proinso</h1>
         </a>
       </div>
-
+      <!-- Start menu-navbar -->
       <input type="radio" name="slider" id="menu-btn">
       <input type="radio" name="slider" id="close-btn">
 
       <ul class="nav-links">
+        <!-- Responsive navbar -->
         <label for="close-btn" class="btn close-btn">
           <i class="fas fa-times">
             <!-- ::before -->
@@ -46,11 +50,16 @@
         </label>
 
         <li>
-          <a href="#" class="desktop-item-back">
+          <a href="https://proinso.com.py/gsc/conectados/#pages/inicio" class="desktop-item-back">
             <i class="fa-solid fa-share fa-flip-horizontal fa-xl" style="color: #ffffff;"></i>
           </a>
           <input type="checkbox" id="showBack">
-          <label for="showBack" class="back-item">Regresar</label>
+          </a>
+          <label for="showBack" class="back-item">
+            <a href="https://proinso.com.py/gsc/conectados/#pages/inicio" class="responsive-item-navbar">
+              Regresar
+            </a>
+          </label>
         </li>
 
         <li>
@@ -58,7 +67,11 @@
             <i class="fa-solid fa-bell fa-shake fa-xl" style="color: #ffffff;"></i>
           </a>
           <input type="checkbox" id="showNotbell">
-          <label for="showNotbell" class="notbell-item">Mis notificaciones</label>
+          <label for="showNotbell" class="notbell-item">
+            <a href="#" class="responsive-item-navbar">
+              Mis notificaciones
+            </a>
+          </label>
         </li>
 
         <li>
@@ -67,27 +80,33 @@
           </a>
           <input type="checkbox" id="showDrop">
           <label for="showDrop" class="mobile-item">Mi espacio</label>
+          <!-- Drop down menu -->
           <ul class="drop-menu">
             <li><a href="#">Usuario</a></li>
             <li><a href="#">Mis Ofertas</a></li>
             <li><a href="#">Ajustes</a></li>
-            <li><a href="#">Conectados</a></li>
+            <li><a href="https://proinso.com.py/gsc/conectados/#pages/inicio">Conectados</a></li>
             <li><a href="#">Cerrar Sesion</a></li>
           </ul>
         </li>
       </ul>
+      <!-- End Responsive navbar -->
       <label for="menu-btn" class="btn menu-btn">
         <i class="fas fa-bars">
           <!-- ::before -->
         </i>
       </label>
+      <!-- End menu-navbar -->
     </div>
+    <!-- End header -->
   </nav>
+  <!-- End Navbar -->
 
-  <main>
+  <!-- Main -->
+  <main class="index-main">
     <div class="cargo-button">
       <div class="single-cargo">
-        <a href="#">
+        <a href="Components/Cargo/Menu.html">
           <i class="fa-regular fa-address-book fa-xl"></i>
         </a>
       </div>
@@ -102,6 +121,14 @@
       <p>Usuarios</p>
     </div>
   </main>
+  <!-- End main -->
+
+  <!-- Footer -->
+  <Footer>
+    <h2>Proinso</h2>
+    <p>Desarrollado por <span>SimpliTech S.A</span></p>
+  </Footer>
+  <!-- End Footer -->
 
   <!-- OJO:alt+shift+a=descomentar/comentar -->
 
