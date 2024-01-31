@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
-
 /* Styles by defect */
 * {
   margin: 0;
@@ -25,7 +24,7 @@ nav .header {
   position: relative;
   max-width: 1600px;
   padding: 0px 83px;
-  height: 70px;
+  height: 100%;
   line-height: 70px;
   margin: auto;
   display: flex;
@@ -42,7 +41,6 @@ h1 {
 }
 
 /* Nav items */
-
 .fa, .fas {
   font-weight: 900;
   font-family: "Font Awesome 5 Free";

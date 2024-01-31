@@ -1,8 +1,14 @@
 
 /* Body main */
 .menu-cargo-main{
-  padding-top: 150px;
-  margin-bottom: 430px;
+  padding-top: 125px;
+  margin-bottom: 250px;
+}
+
+.hr1,.hr2 {
+  border: 0;
+  height: 2px;
+  background-image: linear-gradient(to right, transparent, #CCC, transparent);
 }
 
 /*Between medium and large screens*/
