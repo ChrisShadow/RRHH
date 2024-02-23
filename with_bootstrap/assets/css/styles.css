@@ -5,49 +5,26 @@ body {
 }
 
 a { color:#1176b6; }
-a:hover { text-decoration: underline; }
+a:hover { text-decoration: none; }
 
 /* --- --- HEADER --- --- */
 header {
-	background: #1176b6;
+	background: rgba(130.0000074505806,
+			114.0000008046627,
+			146.00000649690628,
+			0.8799999952316284);
 	padding: 10px 0;
 }
 
-header .logo img {
-	height: 22px;
-}
-
-/* BUSCAR */
-header .buscar form input[type="text"] {
-	width: 100%;
-	background: #fff;
-	border: none;
-	font-size: 12px;
-	padding: 0 10px;
-	height: 25px;
-	line-height: 25px;
-	border-radius: 3px 0 0 3px;
-	color: #6d6d6d;
-	font-family: 'Open Sans', sans-serif;
-}
-
-header .buscar form button {
-	width: 100%;
-	background: #fff;
-	border: none;
-	font-size: 12px;
-	padding: 0 10px;
-	height: 25px;
-	line-height: 25px;
-	border-radius: 0 3px 3px 0;
-	cursor: pointer;
-	color: #6d6d6d;
-}
-
-header .buscar form button:hover {
-	background: #099efc;
+header .logo a, h1 {
 	color: #fff;
+	font-size: x-large;
+	font-weight: 600;
+	margin-top: 12px;
+	text-decoration: none;
 }
+
+
 
 /* MENU */
 header .menu {
@@ -63,16 +40,10 @@ header .menu a:hover {
 	color: rgba(255,255,255,1);
 }
 
-header .menu .imagen {
-	display: inline-block;
-	width: 22px;
-	height: 22px;
-	overflow: hidden;
+header .menu i {
+	font-size: 30px;
 }
 
-header .menu .imagen img {
-	border-radius: 100px;
-}
 
 /* --- --- MAIN --- --- */
 main {
@@ -384,16 +355,5 @@ main footer .copyright {
 		padding: 15px 15px 0 15px;
 	}
 
-	main .contenido-principal .publicacion .foto {
-		padding-right: 0;
-	}
-
-	main .contenido-principal .publicacion .foto a {
-		width: 40px;
-		height: 40px;
-	}
-
-	main .contenido-principal .publicar .foto {
-		display: none;
-	}
+	
 }
