@@ -1,7 +1,7 @@
 body {
 	background: #e9ebee;
 	font-family: 'Open Sans', sans-serif;
-	font-size: 16px;
+	font-size: 18px;
 }
 
 a { color:#1176b6; }
@@ -65,7 +65,13 @@ main .barra-lateral-izquierda nav a {
 	display: block;
 	padding: 3px;
 	font-family: 'Roboto', sans-serif;
-	color: #3d3d3d;
+	color: rgba(130.0000074505806,
+			114.0000008046627,
+			146.00000649690628,
+			0.8799999952316284);
+	text-decoration: none;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
 main .barra-lateral-izquierda nav a:hover {
@@ -283,15 +289,19 @@ main footer .copyright {
 @media screen and (max-width: 767px) {
 	main .btn-menu {
 		display: block;
-		border: 1px solid #00609c;
+		border: 1px solid rgba(130.0000074505806,
+				114.0000008046627,
+				146.00000649690628,
+				0.8799999952316284);
 		padding: 5px 10px;
 		font-size: 14px;
-		background: linear-gradient(to bottom, #1a87cd, #1176b6 100%);
+		background: linear-gradient(to bottom, rgba(128, 117, 141, 0.88)	, rgba(128, 117, 141, 0.88) 100%);
 		color: #fff;
 		border-radius: 3px;
 		cursor: pointer;
 		margin-bottom: 20px;
 		text-align: center;
+		text-decoration: none;
 	}
 
 	main .btn-menu:hover {
