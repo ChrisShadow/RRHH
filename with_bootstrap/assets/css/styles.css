@@ -269,20 +269,25 @@ main .barra-lateral-derecha .ads a img {
 }
 
 /* --- --- FOOTER --- --- */
-main footer {
-	font-family: 'Roboto', sans-serif;
-	font-size: 14px;
+.footer_section {
+	padding: 20px;
+	font-weight: 500;
 }
 
-main footer a {
-	color: #1176b6;
-	line-height: 14px;
-	margin-right: 10px;
+.footer_section p {
+	color: rgba(130.0000074505806,
+			114.0000008046627,
+			146.00000649690628,
+			0.8799999952316284);
+	margin: 0;
+	text-align: center;
 }
 
-main footer .copyright {
-	color: #919191;
-	margin-top: 10px;
+.footer_section a {
+	color: rgba(130.0000074505806,
+			114.0000008046627,
+			146.00000649690628,
+			0.8799999952316284);
 }
 
 /* --- --- MEDIAQUERIES --- --- */
