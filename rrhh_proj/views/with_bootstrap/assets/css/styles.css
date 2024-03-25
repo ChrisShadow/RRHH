@@ -4,8 +4,13 @@ body {
 	font-size: 18px;
 }
 
-a { color:#1176b6; }
-a:hover { text-decoration: none; }
+a {
+	color: #1176b6;
+}
+
+a:hover {
+	text-decoration: none;
+}
 
 /* --- --- HEADER --- --- */
 header {
@@ -16,7 +21,8 @@ header {
 	padding: 10px 0;
 }
 
-header .logo a, h1 {
+header .logo a,
+h1 {
 	color: #fff;
 	font-size: x-large;
 	font-weight: 600;
@@ -32,12 +38,12 @@ header .menu {
 }
 
 header .menu a {
-	color: rgba(255,255,255,.8);
+	color: rgba(255, 255, 255, .8);
 	text-decoration: none;
 }
 
 header .menu a:hover {
-	color: rgba(255,255,255,1);
+	color: rgba(255, 255, 255, 1);
 }
 
 header .menu i {
@@ -139,9 +145,10 @@ main .barra-lateral-izquierda nav a i {
 	font-weight: 600;
 	font-size: 21px;
 }
+
 /* --- --- FOOTER --- --- */
 .footer_section {
-	padding: 20px;
+	padding-top: 20px;
 	font-weight: 500;
 }
 
@@ -171,7 +178,7 @@ main .barra-lateral-izquierda nav a i {
 				0.8799999952316284);
 		padding: 5px 10px;
 		font-size: 14px;
-		background: linear-gradient(to bottom, rgba(128, 117, 141, 0.88)	, rgba(128, 117, 141, 0.88) 100%);
+		background: linear-gradient(to bottom, rgba(128, 117, 141, 0.88), rgba(128, 117, 141, 0.88) 100%);
 		color: #fff;
 		border-radius: 3px;
 		cursor: pointer;
@@ -192,7 +199,7 @@ main .barra-lateral-izquierda nav a i {
 		top: 0;
 		left: 0;
 		cursor: pointer;
-		background: rgba(0,0,0,.5);
+		background: rgba(0, 0, 0, .5);
 		z-index: 99;
 		display: none;
 	}
@@ -207,7 +214,7 @@ main .barra-lateral-izquierda nav a i {
 		z-index: 100;
 		left: 0;
 		top: 0;
-		background: rgba(0,0,0,.85);
+		background: rgba(0, 0, 0, .85);
 		height: 100vh;
 		margin: 0;
 		padding: 0;
@@ -241,5 +248,5 @@ main .barra-lateral-izquierda nav a i {
 		padding: 15px 15px 0 15px;
 	}
 
-	
+
 }
