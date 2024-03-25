@@ -49,6 +49,7 @@ header .menu i {
 main {
 	padding-top: 20px;
 	margin-bottom: 30px;
+	border-bottom: 1px solid #c7c8ca;
 }
 
 /* --- --- BARRA LATERAL IZQUIERDA --- --- */
@@ -141,9 +142,7 @@ main .barra-lateral-izquierda nav a i {
 }
 /* --- --- FOOTER --- --- */
 .footer_section {
-	border-top: 1px solid #c7c8ca;
 	padding-top: 20px;
-	padding: 20px;
 	font-weight: 500;
 }
 

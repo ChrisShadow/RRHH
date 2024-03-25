@@ -141,7 +141,7 @@ main .barra-lateral-izquierda nav a i {
 }
 /* --- --- FOOTER --- --- */
 .footer_section {
-	padding: 20px;
+	padding-top: 20px;
 	font-weight: 500;
 }
 
