@@ -182,7 +182,7 @@ main .barra-lateral-izquierda nav a i {
 
 	main .btn-menu:hover {
 		text-decoration: none;
-		background: #0d659d;
+		background: rgba(128, 117, 141, 0.88);
 	}
 
 	main .fondo-enlace {
