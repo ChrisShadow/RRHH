@@ -49,7 +49,6 @@ header .menu i {
 main {
 	padding-top: 20px;
 	margin-bottom: 30px;
-	border-bottom: 1px solid #c7c8ca;
 }
 
 /* --- --- BARRA LATERAL IZQUIERDA --- --- */
@@ -59,7 +58,6 @@ main .barra-lateral-izquierda {
 }
 
 main .barra-lateral-izquierda nav {
-	border-bottom: 1px solid #c7c8ca;
 	padding-bottom: 20px;
 }
 
@@ -140,6 +138,40 @@ main .barra-lateral-izquierda nav a i {
 	font-weight: 600;
 	font-size: 21px;
 }
+.container-filter{
+	border-top: 3px solid rgba(130.0000074505806,
+			114.0000008046627,
+			146.00000649690628,
+			0.8799999952316284);
+}
+.container-buttons{
+	border-bottom: 3px solid rgba(130.0000074505806,
+			114.0000008046627,
+			146.00000649690628,
+			0.8799999952316284);
+}
+.container-filter .filter{
+	padding: 25px 0;
+}
+.filter .selector{
+	margin-top: 15px;
+	margin-bottom: 200px;
+}
+.buttons .Add, 
+.buttons .Edit{
+	margin: 15px;
+	background-color: rgba(130.0000074505806,
+			114.0000008046627,
+			146.00000649690628,
+			0.8799999952316284);
+	padding: 0;
+	border-radius: 15px;
+}
+.buttons .Add:hover,
+.buttons .Edit:hover {
+	background-color: rgba(229, 207, 252, 0.88);
+}
+
 /* --- --- FOOTER --- --- */
 .footer_section {
 	padding-top: 20px;
