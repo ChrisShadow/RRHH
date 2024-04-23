@@ -55,7 +55,6 @@ header .menu i {
 main {
     padding-top: 20px;
     margin-bottom: 30px;
-    border-bottom: 1px solid #c7c8ca;
 }
 
 /* --- --- BARRA LATERAL IZQUIERDA --- --- */
@@ -65,7 +64,6 @@ main .barra-lateral-izquierda {
 }
 
 main .barra-lateral-izquierda nav {
-    border-bottom: 1px solid #c7c8ca;
     padding-bottom: 20px;
 }
 
@@ -92,63 +90,96 @@ main .barra-lateral-izquierda nav a i {
 }
 
 /* --- --- CONTENIDO PRINCIPAL --- --- */
-.cargo-button,
-.user-button {
-    text-align: center;
-    position: relative;
-    padding: 10px 20px;
-}
-
-.cargo-button .single-cargo,
-.user-button .single-user {
-    position: relative;
-}
-
-.cargo-button .single-cargo i,
-.user-button .single-user i {
-    font-size: 50px;
-    color: rgba(130.0000074505806,
+.container-filter {
+    border-top: 3px solid rgba(130.0000074505806,
             114.0000008046627,
             146.00000649690628,
             0.8799999952316284);
-    position: absolute;
-    left: 50%;
-    margin-left: -50px;
-    top: 0;
-    height: 100px;
-    width: 100px;
-    line-height: 100px;
-    text-align: center;
-    border: 1px solid #dddddd;
-    border-radius: 100%;
-    -webkit-transition: all 0.4s ease;
-    -moz-transition: all 0.4s ease;
-    transition: all 0.4s ease;
 }
 
-.cargo-button:hover .single-cargo i,
-.user-button:hover .single-user i {
-    background: rgba(130.0000074505806,
+.container-buttons {
+    border-bottom: 3px solid rgba(130.0000074505806,
             114.0000008046627,
             146.00000649690628,
             0.8799999952316284);
+}
+
+.filter .selector {
+    margin-top: 50px;
+    margin-bottom: 200px;
+}
+
+.buttons .Add,
+.buttons .Edit {
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-left: 15px;
+    margin-bottom: 50px;
+    background-color: rgba(130.0000074505806,
+            114.0000008046627,
+            146.00000649690628,
+            0.8799999952316284);
+    padding: 0;
+    border-radius: 15px;
+}
+
+.buttons .Add i,
+.buttons .Edit i {
     color: #fff;
-    border-color: transparent;
+    font-style: normal;
 }
 
-.cargo-button p,
-.user-button p {
-    padding-top: 128px;
+.buttons .Add:hover,
+.buttons .Edit:hover {
+    background-color: rgba(229, 207, 252, 0.88);
+}
+
+.buttons .Add:hover i,
+.buttons .Edit:hover i {
     color: rgba(130.0000074505806,
             114.0000008046627,
             146.00000649690628,
             0.8799999952316284);
-    font-weight: 600;
-    font-size: 21px;
 }
+
+.below-buttons .Submit,
+.below-buttons .Cancel {
+    margin-top: 50px;
+    margin-left: 15px;
+    margin-left: 15px;
+    margin-bottom: 50px;
+    padding: 0;
+    border-radius: 15px;
+}
+
+.below-buttons .Submit input,
+.below-buttons .Cancel a {
+    font-weight: bold;
+    color: rgba(130.0000074505806,
+            114.0000008046627,
+            146.00000649690628,
+            0.8799999952316284);
+}
+
+.below-buttons .Submit:hover,
+.below-buttons .Cancel:hover {
+    background-size: contain;
+    background-color: rgba(130.0000074505806,
+            114.0000008046627,
+            146.00000649690628,
+            0.8799999952316284);
+}
+
+.below-buttons .Submit:hover input,
+.below-buttons .Cancel:hover a {
+    color: #fff;
+    font-weight: normal;
+}
+
 
 /* --- --- FOOTER --- --- */
 .footer_section {
+    margin-bottom: 25px;
     padding-top: 20px;
     font-weight: 500;
 }
@@ -190,7 +221,7 @@ main .barra-lateral-izquierda nav a i {
 
     main .btn-menu:hover {
         text-decoration: none;
-        background: #0d659d;
+        background: rgba(128, 117, 141, 0.88);
     }
 
     main .fondo-enlace {
