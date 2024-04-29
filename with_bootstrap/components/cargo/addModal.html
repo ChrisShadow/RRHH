@@ -1,0 +1,39 @@
+<div class="modal-header">
+    <h5 class="modal-title" id="">Agregar Formulario</h5>
+    <button class="close" data-dismiss="modal" aria-label="Cerrar">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form id="form-data">
+
+        <div class="form-group row mt-3 justify-content-center">
+            <div class="col-12 col-md-8 mb-3">
+                <label class="label-control" for="nombre" class="my-3 mx-3"> Nombre:</label>
+                <input class="form-control" type="text" name="nombre" id="nombre" maxlength="50" required value="" />
+            </div>
+            <div class="col-12 col-md-8 mb-3">
+                <label class="label-control" for="fecha" class="my-3 mx-3">Fecha asignación:</label>
+                <input class="form-control" type="date" name="fecha" id="fecha" required value="" />
+            </div>
+            <div class="col-12 col-md-8 mb-3">
+                <label class="label-control" for="dias" class="my-3 mx-3"> Días para la cancelación:</label>
+                <input class="form-control" type="number" name="dias" id="dias" required value="" />
+            </div>
+            <div class="col-12 col-md-8 mb-3">
+                <label class="label-control" for="motivo" class="my-3 mx-3"> Motivo de la cancelación:</label>
+                <input class="form-control" type="text" name="motivo" id="motivo" maxlength="50" required value="" />
+            </div>
+            <div class="col-12 col-md-8 mb-0">
+                <label class="label-control" for="sino" class="my-3 mx-3"> Registrar auditoría (S/N):</label>
+                <input class="form-control" type="text" name="sino" id="sino" maxlength="1" required value="" />
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-success">
+        Aceptar
+    </button>
+    <button class="btn btn-default" data-dismiss="modal">Cerrar</button>
+</div>
